@@ -1,0 +1,7 @@
+990001#Ahmad Muhammad#Programming Languages#0#none
+990002#Usman Mohammed#Java made Easy#1#6990239 
+990003#Usman Yahaya#History of Computing#0#none
+990004#Al Kelly and Ira Pohl#A Book on C#0#none
+990005#John Impagliazzo#C++ Made Easy#0#none
+990006#Peter Grogono#Programming in PASCAL#0#none
+990007#Stephen Garland#Introduction to Computer Science#0#none

@@ -1,0 +1,866 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab06_files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab06_files/editdata.mso">
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB06</h3>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Learn how to </span><b><span
+     style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>overloads</span></b><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'> constructors and methods<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Learn how to use the </span><b><span
+     style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>this</span></b><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'> keyword<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Learn how to write and use the </span><b><span
+     style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>toString()</span></b><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'> method<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Oveloading<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Overloading means having more than one constructor
+in a class or having more than one method with the same name in a class.<span
+style="mso-spacerun: yes">  </span>In the case of constructor, the purpose of
+overloading is to allow the user to have as many options as possible when creating an
+object of the class, <span style="mso-spacerun: yes">t</span>hus making the
+class more flexible to use.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>In the case of methods, overloading alows the same name to be
+used for methods that performs similar tasks – Imagine having two plus
+operators, one for integer addition and another for double addition!<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>The condition for overloading is that the overloaded
+methods and/or constructors must have different signatures.<span
+style="mso-spacerun: yes">  </span>The signature of a constructor is determined
+by the </span><b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+color:blue'>number</span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt'>, the </span><b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+color:blue'>type</span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt'> and the </span><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;color:blue'>order</span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt'> of its parameters.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 1:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">  </span>The
+following example implements the Employee class.<span style="mso-spacerun:
+yes">  </span>Notice how the constructors are overloaded.<span
+style="mso-spacerun: yes">  </span>Also notice the overloading of the deductions
+methods.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.9pt;border-collapse:
+ collapse;border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=708 valign=top style='width:531.0pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public
+  class Employee1 {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private int iDNumber;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private String name;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private double salary;<o:p></o:p></span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New"'><span style='mso-tab-count:2'>            </span></span><b
+  style='mso-bidi-font-weight:normal'><span lang=EN-GB style='font-size:8.0pt;
+  mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>public
+  Employee1(int iD, String employeeName, double employeeSalary)</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>iDNumber = iD;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>name = employeeName;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary = employeeSalary;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>public
+  Employee1(String employeeName, int iD, double employeeSalary)</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>iDNumber = iD;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>name = employeeName;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary = employeeSalary;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>public
+  Employee1(int iD, String employeeName)</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'> {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>iDNumber = iD;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>name = employeeName;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary = 0.0;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>public
+  Employee1(String employeeName, int iD)</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'> {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>iDNumber = iD;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>name = employeeName;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary = 0.0;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void setSalary(double
+  employeeSalary) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary = employeeSalary;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>public int getIDNumber() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span><span style='mso-tab-count:1'>  </span>return
+  iDNumber;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>public String getName() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span><span style='mso-tab-count:1'>  </span>return
+  name;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>public double getSalary() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span><span style='mso-tab-count:1'>  </span>return
+  salary;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<span style='mso-tab-count:3'>        </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>public void
+  deductions(double telephoneBills)</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'> {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary -= telephoneBills;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>public void
+  deductions(double telephoneBills, double medicalBills)</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary -= (telephoneBills +
+  medicalBills);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">  </span><span style="mso-spacerun: yes"> </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void raiseSalary(double
+  percentIncrease) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary += salary * percentIncrease/100;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void printDetails() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;\nID Number:
+  &quot;+iDNumber+&quot;\nName: &quot;+name+&quot;\nSalary: &quot;+salary);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The
+following shows how the constructors and the overloaded methods in the above
+example may be used:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.util.Scanner;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public
+  class TestEmployee1 {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args)
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>Scanner input = new
+  Scanner(System.in);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>int number;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>String name;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>double salary;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.print(&quot;Enter Name for
+  Employee 1: &quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>name = input.nextLine();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.print(&quot;Enter ID Number
+  for Employee 1: &quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>number =
+  input.nextInt();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.print(&quot;Enter Salary for
+  Employee 1: &quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary =
+  input.nextDouble();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green'><span style='mso-tab-count:2'>      </span>//any of the
+  following constructors be used to create the object<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:2'>      </span>Employee1 emp1 = new
+  Employee1(number, name, salary);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green'>// or<span style="mso-spacerun: yes">   </span>Employee1 emp1 =
+  new Employee1(name, number, salary);<span style='mso-tab-count:2'>           </span><o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.print(&quot;\nEnter Name for
+  Employee 2: &quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>name = input.nextLine();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.print(&quot;Enter ID Number
+  for Employee 2: &quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>number =
+  input.nextInt();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green'><span style='mso-tab-count:2'>      </span>//if we do not know
+  the salary, we can use one of the following constructors<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:2'>      </span>Employee1 emp2 = new
+  Employee1(number, name);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:green'>//or<span style='mso-tab-count:1'>  </span>Employee1 emp2 = new
+  Employee1(name, number);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>emp2.setSalary(emp1.getSalary());<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:2'>      </span>emp1.deductions(50);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:2'>      </span>emp2.deductions(60,
+  40);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>emp1.printDetails();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>emp2.printDetails();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<span style='mso-tab-count:2'>     </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1 style='margin-top:.3pt;margin-right:0in;margin-bottom:.3pt;margin-left:
+0in'><span style='font-size:12.0pt;color:blue'>2.<span style="mso-spacerun:
+yes">  </span>The <i>this</i> keyword<o:p></o:p></span></h1>
+
+<h1 style='margin-top:.3pt;margin-right:0in;margin-bottom:.3pt;margin-left:
+0in'><i><span style='color:blue'>this</span></i> <span style='font-weight:normal'>is
+an implicit reference variable (i.e variable that doesn’t<span
+style="mso-spacerun: yes">  </span>need to be declared) that refers to the
+current object.<span style="mso-spacerun: yes">   </span>At the point of
+defining the class, it is used for two purposes as follows:<o:p></o:p></span></h1>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l28 level1 lfo30;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>To
+refer to the instance variables of the class, especially when their names
+happen to be the same with parameters or local variables of a method or constructor.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l28 level1 lfo30;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>To
+call a constructor from within another constructor of the same class.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>The advantages of using </span><b><i><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>this</span></i></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> as can be seen from the
+following example is that the program becomes shorter and that we do not have
+to think of different names for the parameters of constructors and methods.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:0in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt'>Example
+2:</span></b><span style='font-size:10.0pt'><span style="mso-spacerun: yes"> 
+</span>The following example modifies the above by using <span
+style="mso-spacerun: yes"> </span>the </span><b><i><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>this</span></i></b><span
+style='font-size:10.0pt'> keyword<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=702 valign=top style='width:526.5pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public
+  class Employee2 {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private int iDNumber;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private String name;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private double salary;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public Employee2(int</span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'> iDNumber, </span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New"'>String</span><b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'> name,
+  </span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New"'>double</span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'> salary</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>)
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>this</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>.iDNumber
+  = </span><b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:blue'>iDNumber</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>this</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>.name
+  = </span><b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:blue'>name</span></b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>this</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>.salary
+  = </span><b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New";color:blue'>salary</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public Employee2(String</span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'> name, </span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New"'>int</span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'> iDNumber,
+  double salary</span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New"'>) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>this(iDNumber,name,salary);</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public Employee2(int</span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'> iDNumber, </span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New"'>String</span><b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'> name</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>)
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>this(iDNumber,
+  name, 0.0)</span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New"'>;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public Employee2(String</span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'> name, </span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New"'>int</span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'> iDNumber</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>)
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>this(iDNumber,
+  name, 0.0);</span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void setSalary(double </span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>salary</span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt;font-family:"Courier New"'>) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>this.salary =
+  salary;<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span>public int getIDNumber() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span><span style='mso-tab-count:1'>  </span>return
+  iDNumber;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span>public String getName() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span><span style='mso-tab-count:1'>  </span>return
+  name;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span>public double getSalary() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span><span style='mso-tab-count:1'>  </span>return
+  salary;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<span style='mso-tab-count:3'>        </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void deductions(double
+  telephoneBills) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary -= telephoneBills;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void deductions(double
+  telephoneBills, double medicalBills) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary -= (telephoneBills +
+  medicalBills);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void raiseSalary(double
+  percentIncrease) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>salary += salary * percentIncrease/100;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void printDetails() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;\nID Number:
+  &quot;+iDNumber+&quot;\nName: &quot;+name+&quot;\nSalary: &quot;+salary);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:0in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:0in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>To test the above class,
+you need to run the file <b>TestEmployee2.java</b> which is the same as <b>TestEmployee1.java</b>
+except of the creation of objects of type <b>Employee2</b> class instead of objects
+of class <b>Employee1<o:p></o:p></b></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:0in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1 style='margin-top:.3pt;margin-right:0in;margin-bottom:.3pt;margin-left:
+0in'><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>The <i>toString()</i> method<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>Sometimes we would like to print the values of the instance variable of an
+object.<span style="mso-spacerun: yes">  </span>One way of doing this is to
+have a method such as the </span><b><i><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>printDetails()</span></i></b><span
+style='font-size:10.0pt'> method in the above examples.<span
+style="mso-spacerun: yes">  </span>However, this is not a good idea since in
+java, there are different output targets such as graphical windows which uses </span><b><i><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>drawString()</span></i></b><span
+style='font-size:10.0pt'> method of Graphics/Graphics2D object or output
+files which require a different object instead of System.out.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>Thus,
+what is normally done is to provide a </span><b><i><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>toString()</span></i></b><span
+style='font-size:10.0pt'> method which returns a representation of the object
+as a String.<span style="mso-spacerun: yes">  </span>The application can then
+use the string returned by this method as it wishes.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>the name
+</span><b><i><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+color:blue'>toString()</span></i></b><span style='font-size:10.0pt'> is very
+special in that it does not need to be called explicitly like other
+methods.<span style="mso-spacerun: yes">  </span>The java system automatically
+calls the </span><b><i><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+color:blue'>toString()</span></i></b><span style='font-size:10.0pt'> method whenever
+the object reference variable is used in an operation that requires a string. <o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt'>Example
+3</span></b><span style='font-size:10.0pt'>:<span style="mso-spacerun: yes"> 
+</span>The file <b>Employee3.java</b> is the same as <b>Employee2.java</b>
+except for the replacement of the printDetails() method with toString() method.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:9.9pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=696 valign=top style='width:7.25in;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span>public String toString()
+  {<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:2'>      </span>return &quot;\nID
+  Number: &quot;+iDNumber+&quot;\nName: &quot;+name+&quot;\nSalary:
+  &quot;+salary;<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span>}</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>The file
+<b>TestEmployee3.java</b> accordingly modifies <b>TestEmplyee2.java</b> to print
+the two employee objects by implicitly calling the </span><b><i><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>toString()</span></i></b><span
+style='font-size:10.0pt'> method as follows.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:9.9pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=696 valign=top style='width:7.25in;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span><span style='mso-tab-count:
+  1'>   </span>. . . .<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:2'>      </span>System.out.println(emp1);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:2'>      </span>System.out.println(emp2);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span><span style='mso-tab-count:
+  1'>   </span>. . . <o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Assignment.<o:p></o:p></span></h1>
+
+<p class=MsoBodyText style='margin-left:.25in;text-indent:-.25in;mso-list:l19 level1 lfo18;
+tab-stops:list .25in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Download the folder <b>lab06.</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l11 level1 lfo31;
+tab-stops:list .5in'><![if !supportLists]>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Open the files <b>Employee1.java</b> and <b>TestEmployee1.java</b>,
+study then to understand what each is doing, then compile and execute <b>TestEmployee1.java</b>.</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l11 level1 lfo31;
+tab-stops:list .5in'><![if !supportLists]>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Try the alternative constructor calls in the <b>TestEmployee1.java</b>
+by removing the comments on them and commenting the lines before each of them,
+then compile and execute the program again.<span style="mso-spacerun: yes"> 
+</span>You should notice no difference.</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l11 level1 lfo31;
+tab-stops:list .5in'><![if !supportLists]>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Open the files <b>Employee2.java</b> and <b>TestEmployee2.java</b>,
+study them, then compile and execute <b>TestEmployee2.java</b>.</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l11 level1 lfo31;
+tab-stops:list .5in'><![if !supportLists]>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Open the files <b>Employee3.java</b> and <b>TestEmployee3.java</b>,
+study them, then compile and execute <b>TestEmployee3.java</b>.</p>
+
+<p class=MsoBodyText style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p style='margin-left:.25in;text-indent:-.25in;mso-list:l19 level1 lfo18;
+tab-stops:list .25in'><![if !supportLists]>2.<span style='font:3.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>
+(a) Design a class called <i>Author</i> that contains the following. <br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;(i) Three private instance variables: <i>name (String), email (String)</i>, and <i>gender (char of either 'm' or 'f')</i>. <br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;(ii) One constructor to initialize name, email and gender with given values. <br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;(iii) Public getters and setters: <i><span style='color:blue'>getName()</span>, <span style='color:blue'>getEmail()</span>, <span style='color:blue'>setEmail()</span></i>, and <i><span style='color:blue'>getGender()</span></i>. <br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;There are no setters for name and gender, as these attributes cannot be changed.<br><br>
+	&nbsp;&nbsp;&nbsp;&nbsp;(iv) A <i><span style='color:blue'>toString()</span></i> method that returns <i>"author-name (gender) at email", eg, "Aliyu Garba (m) at galiyu@abu.edu.ng". </i><br>
+</p>
+<p>
+(b) Write a test program called <i>TestAuthor</i> to test the constructor and the public methods.<br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Try changing the email of an author. 
+</p>
+</p>
+
+<p class=MsoBodyText style='margin-left:.25in;text-indent:-.25in;mso-list:l19 level1 lfo18;
+tab-stops:list .25in'><![if !supportLists]>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Modify the <b>Box.java</b> and <b>BoxDemo.java</b> of Example
+1 of lab04 as follows:</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l13 level1 lfo34;
+tab-stops:list .5in'><![if !supportLists]>a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>add methods <b><i><span style='color:blue'>getLength(),</span></i></b>
+<b><i><span style='color:blue'>getWidth()</span></i></b> and <b><i><span
+style='color:blue'>getHeight()</span></i></b> that returns the length, width and
+height of the box object.</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l13 level1 lfo34;
+tab-stops:list .5in'><![if !supportLists]>b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>add another constructor which receives only the length.<span
+style="mso-spacerun: yes">  </span>It then calls the other constructor supplying
+this length for all of length, width and height (i.e. it forms a cube).</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l13 level1 lfo34;
+tab-stops:list .5in'><![if !supportLists]>c)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>add another constructor that receives another Box object as
+parameter and then uses its length, width and height to initialize the current
+box object (i.e it creates a box object with same dimension as the one it
+receives as parameter)</p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l13 level1 lfo34;
+tab-stops:list .5in'><![if !supportLists]>d)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>add a <b><i><span style='color:blue'>toString()</span></i></b>
+method that returns the langth, width, and height as a string that prints on
+one line as shown in the figure below.</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyTextIndent2>The class <b>BoxDemo.java</b> should be modified to
+create three Box objects using each of the three constructors and then prints
+it (Note: no need to read input).<span style="mso-spacerun: yes">  </span>Use
+the first box object to create the second.</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify'><img border="0" src="fig06_2.gif" width="370" height="184"></p>
+
+</div>
+
+</body>
+
+</html>

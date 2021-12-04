@@ -1,0 +1,1162 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab09_files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab09_files/editdata.mso">
+
+<title>Lab09</title>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB09</h3>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt'>To
+gain experience with:<o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Reading input from a text file<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Writing/Appending output to text files<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>String processing (breaking a string into
+     tokens)<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Reading Input from a file.<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>To read input from a file, we make use of the
+following classes all of which are in the </span><b><span style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;color:blue'>java.io</span></b><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> </span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>package:<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>FileReader</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>: This is used to create an
+object that can be used to read one character at a time from a file.<span
+style="mso-spacerun: yes">  </span>The format is:<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt;text-indent:.5in'><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:windowtext'>FileReader reader = new FileReader(“inputfile.txt”);<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Notes:<o:p></o:p></span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l40 level1 lfo41;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>If
+the file does not exists, a <b>FileNotFoundException</b> is thrown.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l40 level1 lfo41;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>If
+the file is not in the current folder, the full path of the file must be
+specified.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l40 level1 lfo41;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>When
+specifying the full path of the file, it is better to use forward slash.<span
+style="mso-spacerun: yes">  </span>Example</span><span style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Courier New";color:windowtext'>:
+“C:/workarea/inputfile.txt”</span><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt'><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l40 level1 lfo41;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;font-family:Symbol;
+mso-fareast-font-family:"Courier New";mso-bidi-font-family:"Courier New";
+color:windowtext'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The
+back slash can also be used, but double slash must be used for each slash.<span
+style="mso-spacerun: yes">  </span>Example: </span><span style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Courier New";color:windowtext'>“C:\\workarea\\inputfile.txt”<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;text-indent:.25in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>However, if the file name is being read from the
+user using a string variable, then only single slash is used.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l40 level1 lfo41;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The
+important methods of the FileReader object are:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:1.0in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=73 valign=top style='width:54.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>read()<o:p></o:p></span></b></p>
+  </td>
+  <td width=528 valign=top style='width:5.5in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>returns an integer corresponding to the character
+  read or –1 if there is no more data in the file.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=73 valign=top style='width:54.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>close()<o:p></o:p></span></b></p>
+  </td>
+  <td width=528 valign=top style='width:5.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>this closes the file.<span style="mso-spacerun:
+  yes">  </span>Always close a files after you finish reading from it.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Exampe 1</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>:<span style="mso-spacerun: yes">  </span>The
+following example reads one character at a time from a file and prints it on
+the screen.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=666 valign=top style='width:499.5pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.io.*;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  TestFileReader {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args)
+  throws IOException {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>char c;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>int input;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>FileReader in
+  = new FileReader(&quot;inputfile.txt&quot;);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>while ((</span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>input=in.read()</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>) != -1) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:3'>         </span>c = (char) input;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:3'>         </span>System.out.print(c);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(); <o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style='mso-tab-count:1'>   </span></span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>in.close();<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>BufferedReader</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>:</span><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><span style="mso-spacerun:
+yes">  </span>This can be used together with a FileReader object to read one
+line at a time from a text file.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt;text-indent:.5in'><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:windowtext'>BufferedReader in = new BufferedReader(new
+FileReader(“inputfile.txt”));<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>As we all know, the BufferedReader object has a <b>readLine()</b>
+that returns a string.<span style="mso-spacerun: yes">  </span>When used to
+read a file, the readLine() method returns a whole line.<span
+style="mso-spacerun: yes">  </span>It returns null if there is no more data in
+the file.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Exampe 2</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>:<span style="mso-spacerun: yes">  </span>The
+following example reads one line at a time from a file and prints it on the screen.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=666 valign=top style='width:499.5pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.io.*;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  TestBufferedReader {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args)
+  throws IOException {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>String s;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>BufferedReader
+  in = new BufferedReader(new FileReader(&quot;inputfile.txt&quot;));<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>while ((</span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>s=in.readLine()</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>) != null) <o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:3'>         </span>System.out.println(s);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:3'>         </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>in.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<span
+  style='mso-tab-count:1'>  </span><span style="mso-spacerun: yes">   </span><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>2.<span style="mso-spacerun:
+yes">  </span>Writing/Appending output to text files.<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>To write or append output to a file, we make use of
+the following classes of the </span><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>java.io</span></b><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> </span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>package:<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>FileWriter</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>: This is used to create an
+object that can be used to write one character at a time to a file.<span
+style="mso-spacerun: yes">  </span>The format is:<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt;text-indent:.5in'><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:windowtext'>FileWriter writer = new FileWriter(“ouputfile.txt”);<span
+style="mso-spacerun: yes">  </span>//for writing<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:.5in'><span style='font-size:10.0pt;
+font-family:"Courier New";mso-fareast-font-family:"Courier New";color:windowtext'>or<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt;text-indent:.5in'><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:windowtext'>FileWriter writer = new FileWriter(“ouputfile.txt”, </span><b><span
+style='font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New";
+color:blue'>true</span></b><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:windowtext'>);<span
+style="mso-spacerun: yes">  </span>//for appending<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Notes:<o:p></o:p></span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l40 level1 lfo41;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Unlike
+the case of FileReader object, If the file does not exists, it is created
+automatically.<span style="mso-spacerun: yes">  </span>However, if there is no
+writing access to the file or its folder, a <b>FileNotFoundException</b> is
+thrown.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l40 level1 lfo41;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The
+main methods of the FileWriter object are:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:1.0in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=85 valign=top style='width:63.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>write(int c)<o:p></o:p></span></b></p>
+  </td>
+  <td width=516 valign=top style='width:387.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>writes the given character to the file.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=85 valign=top style='width:63.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>close()<o:p></o:p></span></b></p>
+  </td>
+  <td width=516 valign=top style='width:387.0pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>this closes the file.<span style="mso-spacerun:
+  yes">  </span>It is even more important to close an output file after its
+  use.<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Exampe 3</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>:<span style="mso-spacerun: yes">  </span>The
+following example reads one character at a time from an input file and prints
+it to an output file.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=666 valign=top style='width:499.5pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.io.*;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  TestFileReader {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args)
+  throws IOException {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>char c;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>int input;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>FileReader in = new
+  FileReader(&quot;inputfile.txt&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>FileWriter
+  out = new FileWriter(&quot;outputfile.txt&quot;);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>while ((input=in.read()) != -1) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:3'>         </span>c = (char) input;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:3'>         </span></span><b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>out.write(c);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(); <o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>in.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>out.close();<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>PrintWriter</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>: The problem with the <b>write()</b>
+method of the FileWriter object is that it can only write one character at a
+time.<span style="mso-spacerun: yes">  </span>To be able to write/append
+strings, we create a PrintWriter object, <span style="mso-spacerun:
+yes"> </span>making use of a FileWriter object as a parameter: <o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:windowtext'>PrintWriter out = new
+PrintWriter(new FileWriter(“result.txt”));<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>or<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:windowtext'>PrintWriter out = new
+PrintWriter(new FileWriter(“result.txt”, true));<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>The PrintWriter object has <b>print()</b> and <b>println()</b>
+methods that behave in exactly the same manner as those of System.out object.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Exampe 4</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>:<span style="mso-spacerun: yes">  </span>The
+following example reads one line at a time from an input file and prints it to
+an output file.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=666 valign=top style='width:499.5pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.io.*;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  TestPrintWriter {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args)
+  throws IOException {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>String s;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>BufferedReader in = new
+  BufferedReader(new FileReader(&quot;inputfile.txt&quot;));<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>PrintWriter
+  out = new PrintWriter(new FileWriter(&quot;outputfile.txt&quot;));<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>while ((s=in.readLine()) != null)<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:3'>         </span></span><b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>out.println(s);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>in.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>out.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<span
+  style='mso-tab-count:2'>     </span> <span style="mso-spacerun:
+  yes">  </span><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<b><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";color:blue;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>String Processing (StringTokenizer class).<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>The <b>readLine()</b> method of the <b>BufferedReader</b>
+object reads an entire line at a time.<span style="mso-spacerun: yes"> 
+</span>However, there are many situations where we would like to break the line
+into individual <b>tokens</b> for further processing.<span style="mso-spacerun:
+yes">  </span>For example, if we read the string:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:windowtext'>“996502<span
+style='mso-tab-count:1'>     </span>10<span style='mso-tab-count:1'>    </span>15<span
+style='mso-tab-count:1'>    </span>20”<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>we would like to break the string into the
+following:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New";color:windowtext'>“996502”<span
+style='mso-tab-count:1'>    </span>“10”<span style='mso-tab-count:1'>  </span>“15”<span
+style='mso-tab-count:1'>  </span>“20”<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>so that we can call the appropriate parser method to
+convert the tokens to numbers.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>To achieve this, Java provides the class, <b>StringTokenizer</b>
+in the <b>java.util</b> package.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>To use this class, we need to first create its
+object using one of its constructors.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>The following table shows the constructors and the
+important methods of the <b>StringTokenizer</b> class. <o:p></o:p></span></p>
+
+<table border=0 cellspacing=4 cellpadding=0 width=684 style='width:513.0pt;
+ mso-cellspacing:3.0pt;margin-left:11.25pt;mso-padding-alt:3.0pt 3.0pt 3.0pt 3.0pt'>
+ <tr>
+  <td width=348 valign=top style='width:261.0pt;background:#999999;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>constructors and methods</span></b><span style='font-family:
+  "Arial Unicode MS"'><o:p></o:p></span></p>
+  </td>
+  <td width=324 valign=top style='width:243.0pt;background:#999999;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>description</span></b><span style='font-family:"Arial Unicode MS"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=348 valign=top style='width:261.0pt;background:#FFFF99;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'><pre><code><b>StringTokenizer</b>(String&nbsp;str)</code></pre></td>
+  <td width=324 valign=top style='width:243.0pt;padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>Assumes white space as delimiters </span><span style='font-size:
+  10.0pt;font-family:"Courier New";mso-fareast-font-family:"Courier New"'>(“
+  \t\n\r”)</span><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=348 valign=top style='width:261.0pt;background:#FFFF99;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'><pre><code><b>StringTokenizer</b>(String&nbsp;str, String&nbsp;delim)</code></pre></td>
+  <td width=324 valign=top style='width:243.0pt;padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>Uses the characters in the second argument as delimiters.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=348 valign=top style='width:261.0pt;background:#FFFF99;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'><pre><code><b>StringTokenizer</b>(String&nbsp;str, String&nbsp;delim,<o:p></o:p></code></pre><pre><code><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>boolean&nbsp;returnDelims)</code></pre></td>
+  <td width=324 valign=top style='width:243.0pt;padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>If the third argument is true, include the delimiters are
+  counted as part of the tokens.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=348 valign=top style='width:261.0pt;background:#FFFF99;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'><pre><code>String <b>nextToken</b>()<b><o:p></o:p></b></code></pre></td>
+  <td width=324 valign=top style='width:243.0pt;padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>Returns the next token from this tokenizer’s string<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=348 valign=top style='width:261.0pt;background:#FFFF99;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'><pre><code>boolean<b> hasMoreTokens</b>()<b><o:p></o:p></b></code></pre></td>
+  <td width=324 valign=top style='width:243.0pt;padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>Tests if there are more tokens from this tokenizer's string<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=348 valign=top style='width:261.0pt;background:#FFFF99;padding:
+  3.0pt 3.0pt 3.0pt 3.0pt'><pre><code>int<b> countTokens</b>()<b><o:p></o:p></b></code></pre></td>
+  <td width=324 valign=top style='width:243.0pt;padding:3.0pt 3.0pt 3.0pt 3.0pt'>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>Returns the number of tokens remaining in this tokenizer’s
+  string. <o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 5:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">  </span>The
+following example reads ID numbers, names and grades of students in three
+quizzes contained in a file, <b>quizdata.txt</b> and computes the average of
+each student.<span style="mso-spacerun: yes">  </span>It prints the output on
+both the screen and the file, <b>result.txt</b>.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.io.*;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.util.StringTokenizer;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  ProcessQuiz {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>static final int QUIZ_COUNT = 3;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span>public static void main(String[] args)
+  throws IOException {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>BufferedReader in = new
+  BufferedReader(new FileReader(&quot;quizdata.txt&quot;));<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>PrintWriter out = new
+  PrintWriter(new FileWriter(&quot;result.txt&quot;));<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>String s, name, iDNumber;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>double[] quiz = new double[3];<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span></span><b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>StringTokenizer
+  st;<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes"> </span><span style="mso-spacerun: yes">      
+  </span>while ( (s = in.readLine()) != null) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span></span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>st = new StringTokenizer(s, &quot;|&quot;);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>iDNumber = </span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>st.nextToken();</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>name = </span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>st.nextToken();</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>System.out.print(iDNumber+&quot;\t&quot;+name+&quot;\t&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>out.print(iDNumber+&quot;\t&quot;+name+&quot;\t&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">       
+  </span>double sum = 0; <span style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">    
+  </span>for (int i = 0; i&lt;quiz.length; i++) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+  yes">   </span>quiz[i] = Double.parseDouble(</span><b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>st.nextToken().trim()</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+  yes">   </span>sum += quiz[i];<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+  yes">   </span>System.out.print(quiz[i]+&quot;\t&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+  yes">   </span>out.print(quiz[i]+&quot;\t&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">    
+  </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">    
+  </span>System.out.println(sum/QUIZ_COUNT);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">    
+  </span>out.println(sum/QUIZ_COUNT);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>in.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>out.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 6:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">  </span>The
+following example uses the data from the file, <b>quizdata.txt,</b> to create
+an array of Student objects.<span style="mso-spacerun: yes">  </span>It then
+sends the output in two files, <b>good.txt</b> containing students whose
+average is equal or greater than the overall average and <b>poor.txt</b>
+containing students whose grades is below the overall average.<span
+style="mso-spacerun: yes">  </span>The Student class is the same as the one
+used in lab09, except it has been updated to include an instance variable <b>name</b>.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.io.*;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>import
+  java.util.StringTokenizer;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  GoodAndPoor {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>static final int QUIZ_COUNT = 3,<span
+  style="mso-spacerun: yes">  </span>MAX_STUDENT_COUNT = 30;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">    </span>public static void main(String[] args)
+  throws IOException {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>BufferedReader in = new BufferedReader(new
+  FileReader(&quot;quizdata.txt&quot;));<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style="mso-spacerun: yes">        </span>PrintWriter good =
+  new PrintWriter(new FileWriter(&quot;good.txt&quot;));<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style="mso-spacerun: yes">        </span>PrintWriter poor =
+  new PrintWriter(new FileWriter(&quot;poor.txt&quot;));<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>Student[] student = new
+  Student[MAX_STUDENT_COUNT];<span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">  </span><span style="mso-spacerun:
+  yes">      </span>double [] quiz; <o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>String s, name;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>int iDNumber, actualStudentCount =
+  0;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>StringTokenizer st;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>double sum=0, average;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">        </span>while ( (s = in.readLine()) != null)
+  {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>st = new StringTokenizer(s,
+  &quot;|&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>iDNumber =
+  Integer.parseInt(st.nextToken().trim());<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>name = st.nextToken();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>quiz = new double[QUIZ_COUNT];<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>for (int i=0;
+  i&lt;quiz.length; i++)<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+  yes">  </span>quiz[i] = Double.parseDouble(st.nextToken().trim());<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span></span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'>student[actualStudentCount] = new Student(iDNumber, name, quiz);</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>sum +=
+  student[actualStudentCount].average();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><span style="mso-spacerun: yes">  
+  </span><span style='mso-tab-count:1'>   </span>actualStudentCount++;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>average = sum/actualStudentCount;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">    </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>good.println(&quot;The class average is: &quot;+average);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>good.println(&quot;\r\nStudents with grades equal or above average
+  are:\r\n&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">    </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>poor.println(&quot;The class is: &quot;+average);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>poor.println(&quot;\r\nStudents with grades equal or above average
+  are:\r\n&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">    </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>for (int i=0; i&lt;actualStudentCount; i++)<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span><span
+  style="mso-spacerun: yes">      </span>if (student[i].average() &gt;=
+  average)<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span><span
+  style="mso-spacerun: yes">          </span>good.println(student[i]);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span><span
+  style="mso-spacerun: yes">      </span>else<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+  color:blue'><span style='mso-tab-count:1'>   </span><span
+  style="mso-spacerun: yes">          </span>poor.println(student[i]);<o:p></o:p></span></b></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun:
+  yes">              </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>in.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>good.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><span style="mso-spacerun: yes">   
+  </span>poor.close();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in 1.5in 1.75in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<b><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";color:blue;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Assignments<o:p></o:p></span></h1>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l38 level1 lfo38;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The
+file <b>integerdata.txt</b> contains integer numbers randomly arranged.<span
+style="mso-spacerun: yes">  </span>Write a program that reads the data and
+prints the numbers as they appear in the file both on the screen and in the
+file, <b>result2.txt</b>.<span style="mso-spacerun: yes">  </span>You program
+should also print the count of the numbers, their sum and their average <o:p></o:p></span></p>
+
+<blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><img border="0" src="fig09_1.gif" width="555" height="195"></p>
+
+</blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:8.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:8.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l38 level1 lfo38;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Write a program that
+reads data from the file <b>message.txt</b> and display on the screen, the
+content of the file, the number of words, the longest word, the shortest word
+and the average length of the words in the file.<span style="mso-spacerun:
+yes">  </span>You should not count the punctuation characters “,.;:?!” as part
+of the a word.<o:p></o:p></span></p>
+
+<blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;tab-stops:.75in'><img border="0" src="fig09_2.gif" width="385" height="144"></p>
+
+</blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:8.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l38 level1 lfo38;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Use the class
+BankAccount to write a program that creates an array of BankAccount objects
+using the data contained in the file <b>accounts.txt</b>.<span
+style="mso-spacerun: yes">  </span>Your program then prints all those customers
+whole balance is greater than 10,000.00 into a file <b>richcustomers.txt</b><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;tab-stops:.75in'><img border="0" src="fig09_3.gif" width="290" height="143"></p>
+
+</blockquote>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

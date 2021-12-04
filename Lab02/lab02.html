@@ -1,0 +1,937 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab02files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab03_files/editdata.mso">
+<title>LAB02-Department of Computer Science</title>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB02</h3>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt'>To gain experience with:<o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Creating objects from classes<o:p></o:p></span></li>
+<li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Fundermental Data Types<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>The String class<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Creating Objects from classes<o:p></o:p></span></h1>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>Java is an <b>object-oriented</b>
+programming language, meaning problems are solved by interaction among objects.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>An <b>Object</b> is a
+software-entity that models some real-world entity – e.g. A particular
+rectangle, a particular student, etc.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>Each object has a state
+(represented by its <b>fields</b>) and behaviors (represented by its <b>methods</b>).<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>Objects are created from <b>classes</b>,
+thus to create an object, we need first to design a class.<span
+style="mso-spacerun: yes">  </span>We can also use classes from the Java library.<span
+style="mso-spacerun: yes">  </span>The Java library consists of hundreds of
+classes organized into related groups called <b>packages</b>.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>A <b>class</b> is a
+general blueprint or specification for a set of objects in which fields and
+methods are defined.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>To create an object from
+a class, we use the <b><i>new</i></b> operator as follows:<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;text-indent:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>Rectangle myRectangle = new Rectangle(5,10, 20, 30);<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>In the above, <b>Rectangle</b>
+is a class provided in the Java library under <b>java.awt</b> package.<span
+style="mso-spacerun: yes">  </span>When creating a rectangle object, we need to
+provide values for the top-left corner (x,y), with and height of the rectangle
+object.<span style="mso-spacerun: yes">  </span>The new operator creates the
+rectangle object and returns the address of the object in memory which is then
+assigned to the <b>reference</b> variable <b><i>myRectangle.</i></b><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:1.5in;
+margin-bottom:.0001pt'><img border="0" src="fig02_0.gif" width="264" height="144"></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:1.5in;
+margin-bottom:.0001pt'>&nbsp;</p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>Once an object is
+created, we can call its methods using the <b>dot</b> operator.<span
+style="mso-spacerun: yes">  </span>For example, to call the <b>translate</b>
+method, we write:<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New"'>myRectangle.translate(10,
+15).<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>The following is a
+complete program showing the above points.<span style="mso-spacerun: yes"> 
+</span>Notice that if we use a Java library class that is not in the java.lang
+package, we must import the class using the <b><i>import</i></b> statement.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt'>Example1:<o:p></o:p></span></b></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.25in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre><span lang=EN-GB style='mso-ansi-language:
+  EN-GB'>import java.awt.Rectangle;<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>/*<span style="mso-spacerun: yes">&nbsp; </span>Creates a rectangle object, calls its translate method and then print it. */<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'>public class MoveRectangle {<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>public static void main(String[] args) {<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Rectangle myRectangle=new Rectangle(5, 5, 10, 10);<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Before Translation: &quot;+myRectangle);<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>myRectangle.translate(15,25);<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span> <span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;After Translation: &quot;+myRectangle);<o:p></o:p></span></pre><pre><span
+  lang=EN-GB style='mso-ansi-language:EN-GB'><span style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+  style='tab-stops:.5in'><span lang=EN-GB style='mso-ansi-language:EN-GB'>}</span></pre></td>
+ </tr>
+</table>
+
+<h1 style='margin-top:.3pt;margin-right:0in;margin-bottom:.3pt;margin-left:
+0in'><span style='font-size:12.0pt;color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h1>
+
+<b><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";color:blue;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h1 style='margin-top:.3pt;margin-right:0in;margin-bottom:.3pt;margin-left:
+0in'><span style='font-size:12.0pt;color:blue'>2.<span style="mso-spacerun:
+yes">  </span>The String Class.<o:p></o:p></span></h1>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>A string is a sequence of
+characters enclosed in double quotes.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>String processing is one
+of the common applications of computers.<span style="mso-spacerun: yes"> 
+</span>Java recognizes this fact and therefore provides special support for
+string processing through a class called <b>String</b> in the java.lang
+package, which has many useful methods.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>To create a string object
+from the string class we can use the new operator as follows:<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;text-indent:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>String s = new String(“the content of the string in
+quates”); <o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>However, because of its
+common use, Java allows strings objects to be created without using the new
+operator as in:<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;text-indent:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'>String greeting = “Hello, World!”;<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;text-indent:.25in'><span style='font-size:10.0pt;
+font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>In a string object, the
+characters are indexed starting from 0 as shown below:<o:p></o:p></span></p>
+
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.25in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=115 valign=top style='width:1.2in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p align=center style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;
+  margin-left:0in;margin-bottom:.0001pt;text-align:center'><b><i><span
+  style='font-size:10.0pt'>greeting<o:p></o:p></span></i></b></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><![if !supportEmptyParas]>&nbsp;<![endif]></p>
+  </td>
+  <td width=29 colspan=13 valign=top style='width:.3in;border:none;border-bottom:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  &nbsp;
+  </td>
+ </tr>
+ <tr>
+  <td width=115 valign=top style='width:1.2in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>address of object<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><!--[if gte vml 1]><v:line id="_x0000_s1134"
+   style='position:absolute;z-index:2;mso-position-horizontal-relative:text;
+   mso-position-vertical-relative:text' from="-2.85pt,6.7pt" to="28.65pt,6.7pt">
+   <v:stroke endarrow="block"/>
+  </v:line><![endif]--><![if !vml]><span style='mso-ignore:vglayout;position:
+  absolute;z-index:1;margin-left:-5px;margin-top:3px;width:46px;height:14px'><img
+  width=46 height=14 src="./lab03_files/image003.gif" v:shapes="_x0000_s1134"></span><![endif]><span
+  style='font-size:10.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>H<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>e<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>l<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>l<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>o<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>,<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>W<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>o<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>r<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>l<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>d<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>!<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=115 valign=top style='width:1.2in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>0<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>1<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>2<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>3<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>4<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>5<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>6<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>7<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>8<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>9<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>10<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>11<o:p></o:p></span></p>
+  </td>
+  <td width=29 valign=top style='width:.3in;border:none;mso-border-top-alt:
+  solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:
+  0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>12<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>The table below shows
+some of the most frequently used methods of the String class:<o:p></o:p></span></p>
+
+<div align="center">
+  <center>
+
+<table border=0 cellspacing=4 cellpadding=0 width=775 style='mso-cellspacing: 3.0pt; mso-padding-alt: 3.0pt 3.0pt 3.0pt 3.0pt; margin-left: -11.25pt' height="705">
+ <tr>
+  <td width=43 valign=top style='background-color: #999999; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="29">
+  <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>method</span></b></p>
+  </td>
+  <td width=256 valign=top style='background-color: #999999; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="29">
+  <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>description</span></b><span style='font-family:"Arial Unicode MS"'><o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; background-color: #999999; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="29">
+  <p class=MsoNormal><b><span style='font-size:10.0pt;font-family:Arial;
+  color:white'>String myString = &quot;examples&quot;</span></b><span
+  style='font-family:"Arial Unicode MS"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="44"><pre>int <code><b>length</b></code>()</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="44">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns the number of characters in this String.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="44"><pre>int i = myString.length(); </pre><pre>// i = 8</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="47"><pre>String <code><b>toUpperCase</b></code>()</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="47">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns a new String, representing the Upper-case equivalent of
+  this String.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="47"><pre>String upper=myString.toUpperCase(); </pre><pre>// upper == &quot;EXAMPLES&quot;&nbsp;</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="45"><pre>String <code><b>toLowerCase</b></code>()</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="45">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns a new String, representing the lower-case equivalent of
+  this String.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="45"><pre>String lower=myString.toLowerCase();</pre><pre>// lower == &quot;examples&quot;&nbsp;</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="58"><pre>boolean <code><b>equals</b></code>(String s)</pre><pre>Boolean <code><b>equalsIgnoreCase</b></code></pre><pre> <span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>(String s)</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="58">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns true if the argument has the same length, and same
+  characters as this String.</span></p>
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>the second version ignores the case.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="58"><pre>if (myString.equals(&quot;EXAMPLES&quot;) )</pre><pre>// false</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="61"><pre>int <code><b>compareTo</b></code>(String s)</pre><pre>int <code><b>compareToIngoreCase</b></code></pre><pre><span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(String s)</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="61">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns positive number, 0, or negative number if this String is
+  greater than, equal to or less than the argument respectively. <o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="61"><pre>if (myString.compareTo(&quot;Yes&quot;)&gt;0 )</pre><pre>// true</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="57"><pre>char <code><b>charAt</b></code>(int index)</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="57">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns the char in this String, at the index position passed to
+  the method. Note: Index positions always start at 0<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="57"><pre>char c = myString.charAt(6);</pre><pre>// c = ‘e’</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="74"><pre>int <code><b>indexOf</b></code>(int ch)</pre><pre>int <code><b>lastIndexOf</b></code>(int ch)</pre><pre>//also overloaded to </pre><pre>accept String parameter</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="74">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>finds the first / last occurrence of a character or substring
+  within this string, and returns the index. If the substring or char is not
+  found -1 is returned.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="74"><pre>int i = myString.indexOf(&quot;amp&quot;);</pre><pre>// i == 2</pre><pre>if (myString.indexOf(&quot;Y&quot;) &gt; 0)</pre><pre>// returns -1 and is false</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="75"><pre>String <code><b>substring</b></code></pre><pre><span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(int from)</pre><pre>String <code><b>substring</b></code></pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>(int from, int to)</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="75">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns a part of the original String starting from the
+  fromIndex to the end of the string or up to but not including toIndex if one
+  is given. <o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="75"><pre>String s=myString.substring(5)</pre><pre>// returns &quot;ample&quot; and &quot;les&quot;</pre><pre>String s=myString.substring(2, 7);</pre><pre>// returns &quot;les&quot;</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="60"><pre>String <code><b>trim</b></code>()</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="60">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>returns a String, produced by removing any whitespace characters
+  from the beginning and end of this string.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="60"><pre>String s = “<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>125<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>“;</pre><pre>s = s.trim();</pre><pre>//returns<span style="mso-spacerun: yes">&nbsp; </span>“125”</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="57"><pre>static String <code><b>valueOf</b></code></pre><pre><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>(any primitive type)</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="57">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>is a static method, that is overloaded for all the primitive
+  data types, and returns a String representation of the argument.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="57"><pre>String s = String.valueOf(3.14F);</pre><pre>// numbers to Strings &quot;3.14&quot;</pre></td>
+ </tr>
+ <tr>
+  <td width=43 valign=top style='background-color: #FFFF99; background-repeat: repeat; background-attachment: scroll; padding: 3.0pt; background-position: 0%' height="50"><pre>String <b>concat</b>(String s)</pre><pre>//equivalent to + symbol</pre></td>
+  <td width=256 valign=top style='padding: 3.0pt' height="50">
+  <p class=MsoNormal><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  color:black'>append the argument string at the end of this string.<o:p></o:p></span></p>
+  </td>
+  <td width=300 valign=top style='width: 225.0pt; padding: 3.0pt' height="50"><pre>String s = myString.concat(“ below”)</pre><pre>// returns “examples below”</pre></td>
+ </tr>
+</table>
+
+  </center>
+</div>
+
+<h1><span style='font-size:12.0pt;color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h1>
+
+<b><span style='font-size:10.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";color:black;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;color:black'>Example 2:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;color:black'>The following
+example generates a password for a student using his initials and age.<span
+style="mso-spacerun: yes">  </span>(note:<span style="mso-spacerun: yes"> 
+</span>do not use this for your actual passwords).<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<div align="left">
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB">/* generates a password for a student using his
+  initials and age */<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB">&nbsp;<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB">public class MakePassword {<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>public static void main(String[] args) {<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>String firstName = &quot;Amr&quot;;<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>String middleName = &quot;Samir&quot;;<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>String lastName = &quot;Al-Ibrahim&quot;;<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>int age = 20;<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>//extract initials<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>String initials = <o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>firstName.substring(0,1)+<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>middleName.substring(0,1)+<o:p>
+  </o:p>
+  </span></p>
+  <pre style="tab-stops:.5in"><span lang="EN-GB" style="mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </span>lastName.substring(3,4);<o:p>
+</o:p>
+</span></pre>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>//append age<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>String password = initials.toLowerCase()+age;<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span><o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>System.out.printf(&quot;Your Password =%-20s&quot;,password);<o:p>
+  </o:p>
+  </span></p>
+  <p class="MsoNormal"><span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;
+mso-ansi-language:EN-GB"><span style="mso-tab-count:1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>}<o:p>
+  </o:p>
+  </span></p>
+  <span lang="EN-GB" style="font-size:10.0pt;font-family:&quot;Courier New&quot;;mso-fareast-font-family:
+&quot;Times New Roman&quot;;mso-ansi-language:EN-GB;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA">}</span>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span style='font-size:10.0pt;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>Assignments<o:p></o:p></span></h1>
+
+<div align="left">
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.25in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt' "Times New Roman">Write a program that will do the following.:<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><span
+  style='mso-tab-count:1'>                </span></span><span style='font-size:
+  10.0pt;font-family:"Times New Roman";'>(a) Declare a double variable named miles with initial value of 10.5, increase its value by 1 using the increament operator. Show the result in the form: <o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:
+  10.0pt;font-family:"Courier New"'>“The current value of miles is now: ... “</span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><span
+  style='mso-tab-count:1'>                </span></span><span style='font-size:
+  10.0pt;font-family:"Times New Roman"'>(b) Declare <i>X</i>, <i>Y</i>, <i>Z</i> as doubles, a as an integer equal to 1, and d as a double equal to 1.0. Compute the values of the following expressions.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:
+  10.0pt;font-family:"Courier New"'>X = d + 43 % 5 * (23 * 3 % 2), <br>
+  Y =  1.5 * 3 + (++a),   and <br>
+  Z  =  3 + d * d + 4.</span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><span
+  style='mso-tab-count:1'>                </span></span><span style='font-size:
+  10.0pt;font-family:"Times New Roman"'>(c)  Declare <i>R</i> and <i>p</i> to be doubles with <i>p</i> storing the value 3.758. Compute and display the value of <i>R</i>, where <i>R= log p</i>.<o:p></o:p></span></p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'>Use either Math.PI or declare PI as constant and use it below:<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><span
+  style='mso-tab-count:1'>                </span></span><span style='font-size:
+  10.0pt;font-family:"Times New Roman"'>Write a program that will display the following;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+  font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  "The value of Cos 30° is ...", <br>
+  "The value of exp(15) is ..." <br>
+  "The value of Sin 30° is: ..." <br>
+  "The absolute value of  k is …" <br>
+  "The value of  tan 30° is ..."
+  <p></p>where k = 2 / 4 * 4 % 3, Note also that 30° = (PI * 30)/180 radian
+
+  </td>
+ </tr>
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>3.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'><span style="font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Write a program that breaks a given email address
+  into username and domain name</span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style="margin-left: .25in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><img border="0" src="fig02_2.gif" width="402" height="76"></p>
+  <p style="margin-left: .25in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt">&nbsp;
+  </td>
+ </tr>
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>4.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'><span style="font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Write a program that breaks a given full file
+  name into path, filename and extension.</span>.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt'><img border="0" src="fig02_3.gif" width="448" height="86"></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<b><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";color:blue;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Home Work<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l14 level1 lfo11;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>The class Random of the
+java.util package can be used to create an object which can then be used to
+generate a random integer number from 0 to a given maximum.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt'>Example:<o:p></o:p></span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New"'>Random
+rand = new Random();<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;font-family:"Courier New"'>int
+randomInt = rand.nextInt(1000);<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>Improve the password
+example by generating a random number, <span style="mso-spacerun:
+yes"> </span>multiply the random number with the age before appending it to the
+initials.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l14 level1 lfo11;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:10.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Write a program to
+evaluate and print the value of the following mathematical function :<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style="mso-spacerun:
+yes"> </span><span style='mso-tab-count:1'>     </span>f(x,y) = 2x<sup>2 </sup>-
+y<span style="mso-spacerun: yes">  </span>+<span style="mso-spacerun: yes">  
+</span>3</span></b><b><span lang=EN-GB style='font-size:10.0pt;font-family:
+"Courier New";mso-ansi-language:EN-GB'><o:p></o:p></span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>&nbsp;<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>Vary the values of x and
+y according to the following table and prints the values of f(x,y) as shown in
+the table.<o:p></o:p></span></p>
+
+<p class=MsoNormal><b><span lang=EN-GB style='mso-bidi-font-size:10.0pt;
+mso-ansi-language:EN-GB'>&nbsp;<o:p></o:p></span></b></p>
+<div align=center>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:27.9pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid black .75pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=126 valign=top style='width:94.5pt;border:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>x<span lang=EN-GB
+  style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=150 valign=top style='width:112.5pt;border:solid black .75pt;
+  border-left:none;mso-border-left-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>y<span lang=EN-GB
+  style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border:solid black .75pt;
+  border-left:none;mso-border-left-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>f(x,y)<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=126 valign=top style='width:94.5pt;border:solid black .75pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>3.0<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=150 valign=top style='width:112.5pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>3.0<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=126 valign=top style='width:94.5pt;border:solid black .75pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>2.0<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=150 valign=top style='width:112.5pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>3.0<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=126 valign=top style='width:94.5pt;border:solid black .75pt;
+  border-top:none;mso-border-top-alt:solid black .75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>-4.0<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=150 valign=top style='width:112.5pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>2.0<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+  <td width=210 valign=top style='width:157.5pt;border-top:none;border-left:
+  none;border-bottom:solid black .75pt;border-right:solid black .75pt;
+  mso-border-top-alt:solid black .75pt;mso-border-left-alt:solid black .75pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal align=center style='text-align:center'>&nbsp;<span
+  lang=EN-GB style='mso-bidi-font-size:10.0pt;mso-ansi-language:EN-GB'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+</div>
+
+  
+<p><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><u><span style='color:blue'>Very important guidelines</span></u><span
+style='color:blue'>:</span></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>You should submit both printed
+     copy and soft copy in a flash drive bofore the next lab.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>All your programs files should
+     be saved in a folder HW1 on your flash drive.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Code your programs according to
+     the Java naming conventions <span style="mso-spacerun: yes"> </span>--
+     check this out on my home page.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Indent your work so that content
+     of a class and methods are pushed inside by a tab or at least three
+     spaces.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Use comments at the beginning of
+     each program to explain its purpose.<span style="mso-spacerun: yes"> 
+     </span>Also include your name and ID number as part of the comment. <o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Use comments to explain each
+     variable whose purpose cannot be determined from its name.<o:p></o:p></span></li>
+</ol>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+</body>
+
+</html>

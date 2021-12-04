@@ -1,0 +1,166 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab03_files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab03_files/editdata.mso">
+<title>LAB03-Department of Computer Science</title>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB03</h3>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt'>To gain experience with:<o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Reading input (characters, strings and
+     numbers) from the keyboard<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Reading Input<o:p></o:p></span></h1>
+
+<p>There are various ways to read input from the keyboard, the <i>java.util.Scanner</i> class is one of them.</p>
+<p>The <strong>Java Scanner</strong> class breaks the input into tokens using a delimiter that is whitespace bydefault. It provides many methods to read and parse various primitive values.</p>
+<p>Java Scanner class is widely used to parse text for string and primitive types using regular expression.</p>
+<p>There is a list of commonly used Scanner class methods:</p>
+<table style="margin-left:50px;" border="1" cellspacing="0">
+	<tr><th>Method</th><th>Description</th></tr>
+	<tr><td>public String next()</td><td>it returns the next token from the scanner.</td></tr>
+	<tr><td>public String nextLine()</td><td>	it moves the scanner position to the next line and returns the value as a string.</td></tr>
+	<tr><td>public byte nextByte()</td><td>	it scans the next token as a byte.</td></tr>
+	<tr><td>public short nextShort()</td><td>	it scans the next token as a short value.</td></tr>
+	<tr><td>public int nextInt()	</td><td>it scans the next token as an int value.</td></tr>
+	<tr><td>public long nextLong()</td><td>	it scans the next token as a long value.</td></tr>
+	<tr><td>public float nextFloat()	</td><td>it scans the next token as a float value.</td></tr>
+	<tr><td>public double nextDouble()</td><td>	it scans the next token as a double value.</td></tr>
+</table>
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h4>Example 1: Study, compile, run and observe the output of the following program</h4>
+
+<div style="background-color:gray;color:black;width:900px;font-size:18px;color:#FFFFFF;">
+		<pre>
+//ReadingInput.java
+import java.util.Scanner;
+import java.io.IOException;
+
+public class ReadingInput {
+  public static void main(String[] args)throws IOException {
+    Scanner input = new Scanner(System.in);
+    
+    System.out.print("Please enter your name: ");
+    String name = input.nextLine();
+    
+    System.out.print("Now enter your age: ");
+    int age = input.nextInt();
+	
+	System.out.print("Enter amount to donate: ");
+	double amount = input.nextDouble();
+    
+    System.out.printf("Mr. %s after one year you will be %d years\n",name, (age+1));
+	System.out.printf("This is the amount you donated $%,.2f",amount);
+  }
+}
+		</pre>
+	</div>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>Assignments<o:p></o:p></span></h1>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.25in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'>Write a Java program
+  that prompts for and reads the length, width, and height (in centimeters) of
+  a closed box. The</span> <span style='font-size:10.0pt'>program should then
+  compute and display<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l6 level1 lfo17;
+  tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>(a)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>the volume of the box.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:.5in;text-indent:-.25in;mso-list:l6 level1 lfo17;
+  tab-stops:list .5in'><![if !supportLists]><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>(b)<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>the surface area of the box.<o:p></o:p></span></p>
+  <blockquote>
+    <p style="margin-left: .25in; margin-right: 0in; margin-top: 0in; margin-bottom: .0001pt"><img border="0" src="fig03_1.gif" width="307" height="99"></p>
+  </blockquote>
+  </td>
+ </tr>
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'>Write a program that
+  prompts for and read e-mail address a user.<span style="mso-spacerun: yes"> 
+  </span>The program them prints the user name and the domain name on different
+  lines.(Hint: use indexOf() and substring() method)<o:p></o:p></span></p>
+  <blockquote>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt'><img border="0" src="fig03_2.gif" width="418" height="74"></p>
+  </blockquote>
+  </td>
+ </tr>
+ <tr>
+ <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt; border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'>
+  <p>Write a program that prompts user to read the sides and compute the area, perimter, longest, and smallest side  of triangle. Compute and display the remainder when the longest side is divided by the smallest side. Print and format the output as </p>
+  The perimter of triangle is 11.00 <br>
+  The area of  triangle with sides a=6, b=7, and c=9 is 25.69unit square <br>
+  The longest side is 9 <br>
+  The smallest side is 6 <br>
+  The remainder is 3 <br>
+  
+  </td>
+ </tr>
+</table>
+
+<h1><span style='mso-bidi-font-size:10.0pt;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+</body>
+
+</html>

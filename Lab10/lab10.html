@@ -1,0 +1,623 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab10_files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab10_files/editdata.mso">
+
+<title>10</title>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB10</h3>
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Learn to think recursively<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Learn how to write simple recursive
+     methods<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Thinking Recursively</span></h1>
+
+<p class=MsoBodyText3>It is natural to think of task that involves repetition
+in terms of loops.<span style="mso-spacerun: yes">  </span>For example that
+task of computing the factorial of a number n, could be thought of as finding
+cumulative product of numbers from 1 to n.<span style="mso-spacerun: yes"> 
+</span>That is using the formula”</p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>n! = 1 * <span
+style="mso-spacerun: yes"> </span><span style="mso-spacerun: yes"> </span>. . .*
+n<span style="mso-spacerun: yes">    </span>or 1 if n = 0.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Another approach to solving problems that involves
+repetition is <b>divide-and-conquer</b> approach or <b>recursion</b>.<span
+style="mso-spacerun: yes">  </span>In this approach, the solution is defined in
+terms of a smaller version of the problem.<span style="mso-spacerun: yes"> 
+</span>This simplification of the problem is repeated until the smallest form
+of the problems is reached for which the solution is obvious.<span
+style="mso-spacerun: yes">  </span>For example, the factorial of n could be
+defined as:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify'><img border="0" src="lab10_1.gif" width="196" height="65"></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Some examples of problems that can be thought of in
+this way are described below:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><img border="0" src="lab10_2.gif" width="790" height="307"></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>2.<span style="mso-spacerun:
+yes">  </span>Writing recursive methods in Java</span></h1>
+
+<p class=MsoBodyText3>One of the beauty of recursive algorithms is that they
+can be implemented almost directly in Java.<span style="mso-spacerun: yes"> 
+</span>The code is generally shorter than the loop version and it usually
+requires lass number of variables and assignments.<span style="mso-spacerun:
+yes">  </span>The following examples implements the algorithms described above.</p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 1:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'> Computes the sum of integers from 1 to a given
+number, n.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=372 valign=top style='width:278.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Recursive<o:p></o:p></span></b></pre></td>
+  <td width=340 valign=top style='width:255.35pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Iterative<o:p></o:p></span></b></pre></td>
+ </tr>
+ <tr>
+  <td width=372 valign=top style='width:278.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>import java.io.*;<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>public class SumFromOneTo {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>public static void main(String args[]) {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(sumFromOneTo(10));<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>public static int sumFromOneTo(int n) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (n &lt;= 0) <o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>return 0;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;</span>else <o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>return sumFromOneTo(n-1)+n;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>}<o:p></o:p></span></pre></td>
+  <td width=340 valign=top style='width:255.35pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>import java.io.*;<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>public class IterativeSumFromOneTo {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>public static void main(String args[]) {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(sumFromOneTo(10));<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>public static int sumFromOneTo(int n) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>int sum=0;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>for (int i=1; i&lt;=n; i++)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>sum+=i;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>return sum;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>}<o:p></o:p></span></pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 2:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'> Find the minimum element from an array.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Recursive<o:p></o:p></span></b></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>import java.util.Scanner;<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>public class ArrayMinimum {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  1'>&nbsp;&nbsp; </span>public static void main(String[] args)  {<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Scanner stdin = new Scanner(System.in);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] number = new double[10];<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int k = 0; k &lt; number.length; k++)<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(&quot;Please enter element#&quot; + (k + 1)+&quot;: &quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>number[k] = stdin.nextDouble();<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  1'>&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;The minimum value in the array is &quot; + arrayMinimum(number, 0));<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println();<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  1'>&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static double arrayMinimum(double[] x, int start) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (start == x.length-1)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>return x[x.length-1];<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>return Math.min(x[start], arrayMinimum(x, start+1));<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>}<o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Iterative</span></b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static double arrayMinimum(double[] x) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double min = x[0];<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i=1; i&lt;x.length; i++)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>if (x[i] &lt; min)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>min = x[i];<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return min;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}</span></b><span style='font-size:9.0pt;
+  mso-bidi-font-size:10.0pt'><o:p></o:p></span></pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 3:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'> Check if an element is contained in an array.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Recursive<o:p></o:p></span></b></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>import java.util.Scanner;<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>public class Member {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  1'>&nbsp;&nbsp; </span>public static void main(String[] args)  {<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Scanner stdin = new Scanner(System.in);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] number = new double[10];<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int k = 0; k &lt; number.length; k++)<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(&quot;Please enter element#&quot; + (k + 1)+&quot;: &quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>number[k] = stdin.nextDouble();<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  1'>&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(&quot;\nNow enter element to search for: &quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double element = stdin.nextDouble();<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (isMember(element, number, 0))<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(element+ &quot; is contained in the array&quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else<o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(element+ &quot; is NOT contained in the array&quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  1'>&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  1'>&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static boolean isMember(double e, double[] x, int start) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if(start &gt;= x.length)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>return false;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else if (e == x[start])<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>return true;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else<span style="mso-spacerun: yes">&nbsp;&nbsp; </span><o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;</span>return isMember(e, x, start+1);<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>}<o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Iterative</span></b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static boolean isMember(double e, double[] x) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i=0; i&lt;x.length; i++)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>if (x[i] == e)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return true;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return false;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}</span></b><span style='font-size:9.0pt;
+  mso-bidi-font-size:10.0pt'><o:p></o:p></span></pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 4:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'> Print numbers from a given starting value to a given
+stopping value incrementing using a given stepping value.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Recursive<o:p></o:p></span></b></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>import java.util.Scanner;<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>public class PrintRange {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>public static void main(String args[]) throws IOException {<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style='mso-tab-count:
+  2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Scanner stdin = new Scanner(System.in);<span style="mso-spacerun: yes">&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'> </span><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>System.out.print(&quot;Enter starting value: &quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>int start = stdin.nextInt();<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>System.out.print(&quot;Enter stoping value: &quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>int stop = stdin.nextInt();<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>System.out.print(&quot;Enter stepping value: &quot;);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>int step = stdin.nextInt();<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>printRange(start, stop, step);<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>public static void printRange(int start, int stop, int step) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if (start &lt;= stop) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(start); <o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>printRange(start+step, stop, step);<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<span style="mso-spacerun: yes">&nbsp;&nbsp; </span><o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>}<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>}<o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='text-align:center;tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'>Iterative</span></b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></pre></td>
+ </tr>
+ <tr>
+  <td width=667 valign=top style='width:6.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>public static void printRange(int start, int stop, int step) {<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i=start; i&lt;stop; i+=step) <o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>System.out.println(i); <o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt;color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>}</span></b><span
+  style='font-size:9.0pt;mso-bidi-font-size:10.0pt'><o:p></o:p></span></pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Assignments<o:p></o:p></span></h1>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Write a recursive method
+that returns the sum of elements in an array of double.<span
+style="mso-spacerun: yes">  </span>Test your method by writing a main method
+that creates an array of double of size 10, initialize it by reading data from
+the user and calling your method to compute the sum and print it.<span
+style="mso-spacerun: yes">  </span>See fig 1 below:<o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:.5in;border-collapse:
+ collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=335 valign=top style='width:251.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><img border="0" src="lab10_3.gif" width="256" height="190"></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+  margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>fig
+  1<o:p></o:p></span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><img border="0" src="lab10_4.gif" width="267" height="196"></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+  margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>fig
+  2<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Improve your program in
+1 above by writing another recursive method that counts the number of positive
+elements in the array.<span style="mso-spacerun: yes">  </span>add a statement
+inside the main method to call this method so that you program prints both the
+sum and the number of positive elements in the array.<span style="mso-spacerun:
+yes">  </span>See figure 2 above.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Write a recursive method
+that returns true if a string passed to it as parameter is a palindrome (palindrome
+is a string that reads the same both forward and backward).<span
+style="mso-spacerun: yes">  </span>Test your method by writing a main method
+that reads a string from the user and then calls your method to know if the
+string is a palindrome and prints an appropriate message.<span
+style="mso-spacerun: yes">  </span>See fig 3 below:<o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:.5in;border-collapse:
+ collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=335 valign=top style='width:251.5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><img border="0" src="lab10_5.gif" width="244" height="64"></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><img border="0" src="lab10_6.gif" width="233" height="60"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+  margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>fig
+  3<o:p></o:p></span></b></p>
+  </td>
+  <td width=305 valign=top style='width:228.75pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><img border="0" src="lab10_7.gif" width="239" height="62"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+  margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>fig
+  4<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>4.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Write a recursive method
+that prints a string passed to it as parameter in reverse order.<span
+style="mso-spacerun: yes">  </span>Test your program by writing a main method
+that reads a string from the user and calls your method to print it in reverse
+order.<span style="mso-spacerun: yes">  </span>See the fig 4. above.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

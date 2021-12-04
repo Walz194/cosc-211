@@ -1,0 +1,445 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns:p="urn:schemas-microsoft-com:office:powerpoint"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab02files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab03_files/editdata.mso">
+<title>LAB04-Department of Computer Science</title>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB05</h3>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:11.0pt;
+mso-bidi-font-size:12.0pt'>To gain experience with:<o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Selection Statement<o:p></o:p></span></li>
+<li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Iteration<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Selection Statement<o:p></o:p></span></h1>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>Three types of selection statements.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:14.0pt'><i>if statement</i>.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>
+<ul>
+	<li>Performs an action, if a condition is true; skips it, if false.</li>
+	<li>Single-selection statement—selects or ignores a single action (or group of actions).</li>
+</ul>
+<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:14.0pt'><i>if…else statement:</i>.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>
+<ul>
+	<li>Performs an action if a condition is true and performs a different action if the condition is false.</li>
+	<li>Double-selection statement—selects between two different actions (or groups of actions).</li>
+</ul>
+<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:14.0pt'><i>switch statement:</i>.<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'>
+<ul>
+	<li>Performs one of several actions, based on the value of an expression.</li>
+	<li>Multiple-selection statement—selects among many different actions (or groups of actions).</li>
+</ul>
+<o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:18.0pt'>if Single-Selection Statement</b>.<o:p></o:p></span></p>
+
+<p><img border="0" src="if_select.jpg"></p>
+<table border="1" width="70%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="508">
+		<span style="font-size: 16.0pt; font-family: Times New Roman; color: black">
+		Pseudocode:</span><p>
+		<span style="font-size: 14.0pt; font-family: Times New Roman; color: #0026CC; font-style: italic">
+		If student’s grade is greater than or equal to 60<br>
+		&nbsp; Print “Passed”</span></td>
+		<td>
+		<span style="font-size: 16.0pt; font-family: Times New Roman; color: black">
+		Java Code:</span><p>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: blue">
+		if</span><span style="font-size: 14.0pt; font-family: Lucida Console; color: black"> 
+		( studentGrade &gt;= </span>
+		<span style="font-size: 19.0pt; font-family: Lucida Console; color: #128AFF">
+		60</span><span style="font-size: 19.0pt; font-family: Lucida Console; color: black"> 
+		) <br>
+		&nbsp;&nbsp; System.out.println( </span>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: #128AFF">
+		&quot;Passed&quot;</span><span style="font-size: 19.0pt; font-family: Lucida Console; color: black"> 
+		);</span></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<span style="font-family: Times New Roman; color: black"><font size="5">
+		If the condition is false, the Print statement is ignored, and the next 
+		pseudocode statement in order is performed.</font></span></td>
+	</tr>
+</table>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:18.0pt'>if Single-Selection Statement</b>.<o:p></o:p></span></p>
+
+<p><img border="0" src="if_else.jpg"></p>
+
+<table border="1" width="70%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td width="516">
+		<span style="font-size: 16.0pt; font-family: Times New Roman; color: black">
+		Pseudocode:</span><p>
+		<span style="font-size: 14.0pt; font-family: Times New Roman; color: #0026CC; font-style: italic">
+		If student’s grade is greater than or equal to 60<br>
+		&nbsp; Print “Passed”<br>
+		Else<br>
+		&nbsp; Print “Failed”</span></td>
+		<td>
+		<span style="font-size: 16.0pt; font-family: Times New Roman; color: black">
+		Java Code:</span><p>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: blue">
+		if</span><span style="font-size: 19.0pt; font-family: Lucida Console; color: black"> 
+		( grade &gt;= </span>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: #128AFF">
+		60</span><span style="font-size: 19.0pt; font-family: Lucida Console; color: black"> 
+		) <br>
+		&nbsp;&nbsp; System.out.println( </span>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: #128AFF">
+		&quot;Passed&quot;</span><span style="font-size: 19.0pt; font-family: Lucida Console; color: black"> 
+		);<br>
+		</span>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: blue">
+		else<br>
+		</span>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: black">
+		&nbsp;&nbsp; System.out.println( </span>
+		<span style="font-size: 14.0pt; font-family: Lucida Console; color: #128AFF">
+		&quot;Failed&quot;</span><span style="font-size: 19.0pt; font-family: Lucida Console; color: black"> 
+		);</span></td>
+	</tr>
+	<tr>
+		<td colspan="2">
+		<span style="font-size: 16.0pt; font-family: Times New Roman; color: black">
+		Note that the body of the </span>
+		<span style="font-size: 16.0pt; font-family: Lucida Console; color: black">
+		else</span><span style="font-size: 16.0pt; font-family: Times New Roman; color: black"> 
+		is also indented.</span></td>
+	</tr>
+</table>
+<p style='font-size:16.0pt;'><span style="color:blue">Conditional operator </span>(?:)—shorthand if…else.</p>
+<p style='font-size:16.0pt;'><span style="color:blue">Ternary operator</span> (takes three operands)</p>
+<p><b><span style='font-size:14px;'>boolean expression ? the value if the boolean expression is true : the value if the boolean expression evaluates to false<o:p></o:p></span></b></p>
+<p><i>System.out.println(studentGrade >= 60 ? "Passed" : "Failed" );</i></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;color:black'>Example 1:<o:p></o:p></span></b></p>
+
+<table border="1" cellSpacing="0" cellPadding="0" width="70%">
+	<tr>
+		<td width="564">
+		<pre>import java.util.Scanner;
+
+public class Tester
+{
+   public static void main(String [] args)
+   {
+	int score ;
+	char grade;
+
+	Scanner input = new Scanner(System.in);
+	System.out.println(&quot;Enter your score&quot;);
+	score = input.nextInt();
+
+<font color="#0000ff"><b>        if (score &gt;=90) 
+           grade = 'A'; 
+        </font><font color="#FF0000">else if</font><font color="#0000ff"> (score &gt;=80) 
+           grade = 'B'; 
+        </font><font color="#FF0000">else if</font><font color="#0000ff"> (score &gt;=70) 
+           grade = 'C'; 
+        </font><font color="#FF0000">else if</font><font color="#0000ff"> (score &gt;=60) 
+           grade = 'D'; 
+        else 
+           grade = 'F';</font></b>
+
+	System.out.println(&quot;Your test score is &quot;+ score 
+         + &quot;, which is equivalent to the grade &quot; + grade + &quot;.&quot;);
+   }
+}</pre>
+		<p>&nbsp;</td>
+		<td>
+		<pre>import java.util.Scanner;
+
+public class Tester
+{
+   public static void main(String [] args)
+   {
+	int score ;
+	char grade;
+
+	Scanner input = new Scanner(System.in);
+	System.out.println(&quot;Enter your score&quot;);
+	score = input.nextInt();
+
+<font color="#0000ff"><b>        if (score &gt;=90) 
+           grade = 'A'; 
+         
+        if (score &gt;=80) 
+           grade = 'B'; 
+         
+        if (score &gt;=70) 
+           grade = 'C'; 
+           
+        if (score &gt;=60) 
+           grade = 'D'; 
+        else    
+           grade = 'F';</b></font>
+
+	System.out.println(&quot;Your test score is &quot;+ score 
+         + &quot;, which is equivalent to the grade &quot; + grade + &quot;.&quot;);
+   }
+}</pre>
+		<p>&nbsp;</td>
+	</tr>
+	<tr>
+		<td style="color:blue;font-size:18px;">Study, run, compile and run the above codes and observe the output</td>
+	</tr>
+</table>
+<p><a href="Nested.html" target="_BLANK">Click for nested if statements</a></p>
+
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Iteration (Repitation) <o:p></o:p></span></h1>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'>Three repetition statements (also called looping statements)Perform statements repeatedly while a loop-continuation condition remains true.</p>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+	text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><i>while</i> and <i>for</i> statements perform the action(s) in their bodies zero or more times. if the loop-continuation condition is initially false, the body will not execute</p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+	text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'>The <i>do…while</i> statement performs the action(s) in its body one or more times</p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;color:black'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>Assignments<o:p></o:p></span></h1>
+
+<div align="left">
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.25in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:12.0pt'>1.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:12.0pt' "Times New Roman">(a) Write an application that will prompt user the to enter the first term, common difference, and the number of terms of an arithmetic progression (AP). It should compute the nth term of the series and the sum of the first n terms. Your code should ensure that the number of terms, n, is positive:<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:12.0pt'><span
+  style='mso-tab-count:1'>                </span></span><span style='font-size:
+  12.0pt;font-family:"Times New Roman";'>[Hint: use Tn=a +(n– 1)d, and Sn = (n/2)(a+Tn), wherea is the first term,n is the number of terms,d is the common difference,Tn is thenth term of the series, andSn is the sum of the firstn terms.] <o:p></o:p></span></p>
+  </td>
+ </tr>
+ 
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:12.0pt'>2.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'>A quadratic equation of the form  <img src="quadratic.png"/> has roots:<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><span
+  style='mso-tab-count:1'>                </span></span><span style='font-size:
+  12.0pt;font-family:"Times New Roman"'>(a) Write a program that efficiently determines the values of the roots (<i>root1</i> and <i>root2</i>) of the given equation.  Assume that all the variables have been declared as type <i>double</i>. Note that the roots are real and distinct, real and equal, or complex according to whether the discriminant <i>(b2 – 4ac)</i> is positive, zero or negative, respectively. ;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+  font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p>Format the output in the following ways (where <i>root1</i> and <i>root2</i> are the calculated roots of the equation). </p>
+   The roots are real and distinct :<i>root1,root2</i><br>
+   The roots are real and equal:<i>root1</i><br>
+   The roots are complex<br>
+   <p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><span
+  style='mso-tab-count:1'>                </span></span><span style='font-size:
+  12.0pt;font-family:"Times New Roman"'>(b) Re-write the example 1 above using <i>switch</i> statement</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=673 valign=top style='width:504.9pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+  margin-bottom:.0001pt;text-indent:-.25in;mso-list:l5 level1 lfo15;tab-stops:
+  list .25in'><![if !supportLists]><span style='font-size:10.0pt'>3.<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt'><span style="font-size:10.0pt;font-family:&quot;Times New Roman&quot;;
+mso-fareast-font-family:&quot;Times New Roman&quot;;mso-ansi-language:EN-US;mso-fareast-language:
+EN-US;mso-bidi-language:AR-SA">Write a program using the followiing pseudocode:</span><o:p></o:p></span></p>
+<p>
+<pre> (a)
+
+ 1 Set total to zero
+ 2 set grade counter to one
+ 3
+ 4 While grade counter is less than or equal to zero
+ 5   Prompt the user to enter the next grade
+ 6   Input the next grade
+ 7   Add the grade into the total
+ 8   Add one to the grade counter
+ 9	
+ 10 Set the class avaerage to the total divided by ten
+ 11 Print the class avarage
+</pre>
+</p>
+  <p>
+<pre> (b)
+
+ 1 Initialize total to zero
+ 2 Initialize counter to zero
+ 3
+ 4 Prompt the user to enter the first grade
+ 5 Input the first grade (possibly the sentinel)
+ 6
+ 7 While the user has not yet entered the sentinel
+ 8   Add this grade into the running total
+ 9   Add one to the grade counter
+ 10  Prompt user to enter the next grade
+ 11  Input the next grade (Possibly the sentinal)
+ 12	
+ 13 If the counter is not equal to zero
+ 14  Set the average to the total divided by the counter
+ 15  Print the average
+ 16 else
+ 17  Print "No grades were entered!"
+</pre>
+</p>
+
+<p>
+<pre> (c)
+
+ 1 Initialize passes to zero
+ 2 Initialize failures to zero
+ 3 Initialize student counter to one
+ 4
+ 5 While student counter is less than or equal to 10
+ 6   Prompt the user to enter the exam result
+ 7   Input the next exam result
+ 8  
+ 9   If the student passed
+ 10   Add one to passes
+ 11  Else 
+ 12   Add one to failures
+ 13		
+ 14  Add one to student counter
+ 15	 
+ 16 Print the number of passes
+ 17 Print the number of failures
+ 18
+ 19 If more than eight students passed
+ 20	 Print "Execellent to instructor"
+</pre>
+</p>
+  </td>
+ </tr>
+ 
+</table>
+
+</div>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<b><span style='font-size:12.0pt;font-family:"Times New Roman";mso-fareast-font-family:
+"Times New Roman";color:blue;mso-ansi-language:EN-US;mso-fareast-language:EN-US;
+mso-bidi-language:AR-SA'><br clear=all style='page-break-before:always'>
+</span></b>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Home Work<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l14 level1 lfo11;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:14.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>The value of an investment of P naira after t years at an interest rate ofr% compounded yearly is given by <i>P(1 +r/100)<sup>t</sup></i>.<br> Write a program that will ask the user to input <i>P,t and r</i>, and will calculate and display the value of the investment. <br>This should be done in asentinel-controlled loop so that many such calculations can be performed.<o:p></o:p></span></p>
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l14 level1 lfo11;tab-stops:
+list .5in'><![if !supportLists]><span style='font-size:14.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>The first term of aGP is 1.5, and its common ratio is 2. Write a program that will calculate the sum of ten terms. Do not use a formula.<o:p></o:p></span></p>
+
+ 
+</table>
+</div>
+
+  
+<p><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoNormal><u><span style='color:blue'>Very important guidelines</span></u><span
+style='color:blue'>:</span></p>
+
+<ol style='margin-top:0in' start=1 type=1>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>You should submit both printed
+     copy and soft copy in a flash drive bofore the next lab.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>All your programs files should
+     be saved in a folder HW1 on your diskette.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Code your programs according to
+     the Java naming conventions <span style="mso-spacerun: yes"> </span>--
+     check this out on my home page.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Indent your work so that content
+     of a class and methods are pushed inside by a tab or at least three
+     spaces.<o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Use comments at the beginning of
+     each program to explain its purpose.<span style="mso-spacerun: yes"> 
+     </span>Also include your name and ID number as part of the comment. <o:p></o:p></span></li>
+ <li class=MsoNormal style='color:black;mso-list:l9 level1 lfo16;tab-stops:
+     list .5in'><span style='font-size:10.0pt'>Use comments to explain each
+     variable whose purpose cannot be determined from its name.<o:p></o:p></span></li>
+</ol>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</div>
+</body>
+
+</html>

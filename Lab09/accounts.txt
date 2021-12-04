@@ -1,0 +1,10 @@
+971942 |Usman Ibrahim  | 1000.00
+971986 |Nasir Muhammad | 25000.60
+972706 |Farouk Isah    | 15250.00
+973069 |Shehu Amir     | 50050.00
+973178 |Yakub Umar     | 18700.00
+973410 |Abdullah Sani  | 9080.70
+974079 |Bashir Othman  | 4500.00
+974130 |Junaidu Tukur  | 12390.00
+974201 |Adamu Hassan   | 14200.65
+974705 |Hussain Ahmad  | 3000.00

@@ -1,0 +1,777 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab07_files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab07_files/editdata.mso">
+<title>Lab07</title>
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB07</h3>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt'>To
+gain experience with:<o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>using arrays<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>cloning arrays<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>writing methods that receives arrays as
+     parameters or have array as their return type<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>using array of objects<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Brief Review of Arrays</span> </h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>An array is a contiguous list of memory cells that
+can be identified using a single variable.<o:p></o:p></span></p>
+
+<p class=MsoNormal><span style='color:white;display:none;mso-hide:all'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>An array is declared as shown below<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span style='mso-tab-count:
+1'>      </span></span><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:blue'>int[] grades = new int[10];<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>The above can also be broken into two steps:<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>1.<span style='mso-tab-count:1'>             </span>Declaration
+of the array:<span style="mso-spacerun: yes">   </span><span style='mso-tab-count:
+1'>  </span></span><b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Courier New";color:blue'>int[] grades;<o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>This declares a reference variable for an integer
+array (a variable that can hold the address of an integer array).<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.5in;border-collapse:
+ collapse;border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=91 valign=top style='width:.95in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p align=center style='margin:0in;margin-bottom:.0001pt;text-align:center'><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>grades<o:p></o:p></span></b></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=91 valign=top style='width:.95in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>2.<span style='mso-tab-count:1'>             </span>Creation
+of the array object:<span style="mso-spacerun: yes">  </span><span
+style='mso-tab-count:1'>             </span></span><b><span style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>grades =
+new int[10];</span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Courier New"'><span style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>This creates the array object in the memory (just
+like any object) and stores its address in the reference variable grades.<o:p></o:p></span></p>
+
+<blockquote>
+
+<p style='margin:0in;margin-bottom:.0001pt'><img border="0" src="fig07_4.gif" width="626" height="49"><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</blockquote>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Notice that the index of an array begins </span><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>from zero</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> and ends </span><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>one less than the
+size</span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>.<span
+style="mso-spacerun: yes">  </span>Any attempt to access elements outside this
+range will make the java interpreter to throw </span><b><span style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;color:blue'>ArrayIndexOutOfBoundsException</span></b><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>.<o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Once an array is created, its individual elements
+can be accessed by using the array name followed by the index in square
+brackets.<span style="mso-spacerun: yes">  </span>Example, to assign 15 to
+element number 6, we write:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:blue'>grades[5] = 15;<o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Each array has an instance final variable </span><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>length</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> that holds the size of the
+array.<span style="mso-spacerun: yes">  </span>This is very useful if we need
+to access each element of the array.<span style="mso-spacerun: yes"> 
+</span>For example, the following for loop initializes each element of the
+array to its index:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Courier New"'>for (int i = 0; i &lt; </span><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";
+color:blue'>grades.length</span></b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New"'>; i++)<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Courier New"'><span style='mso-tab-count:1'>      </span>grades[i]
+= i;<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>If we have the values to be assigned to an array are
+known, then an array can be created using <b>initializer</b> list as follows:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Courier New"'>char[] vowels = </span><b><span style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New";color:blue'>{‘a’,<span
+style="mso-spacerun: yes">  </span>‘e’,<span style="mso-spacerun: yes"> 
+</span>‘i’, ‘o’,<span style="mso-spacerun: yes">  </span>‘u’}</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>This declares and creates a character array of five
+elements and initializes it with the vowel characters.<span
+style="mso-spacerun: yes">  </span>Notice that in this case, the size is not
+specified and the new operator is not used.<span style="mso-spacerun: yes"> 
+</span>The compiler automatically counts the elements, creates an array of the
+appropriate size and fills the array with the elements.<span
+style="mso-spacerun: yes">  </span><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes"> </span><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>We can also create array of objects.<span
+style="mso-spacerun: yes">  </span>For example, the following declares an array
+to hold 10 student objects:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:blue'>Student[] student = new
+Student[10];<o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<blockquote>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><img border="0" src="fig07_5.gif" width="642" height="54"><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+</blockquote>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>However, unlike array of primitive types where
+primitive values are stored directly into the array cells, <span
+style="mso-spacerun: yes"> </span>array of objects is used to store the
+references to the objects.<span style="mso-spacerun: yes">  </span>For example,
+to store a reference to a student object in the first cell of the array, we
+create the student object as follows:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:blue'>student[i] = new Student(. . .); <o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>2.<span style="mso-spacerun:
+yes">  </span>Example programs</span> </h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 1:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'> The following creates two array and prints their
+vector and dot products.<span style="mso-spacerun: yes">  </span>Notice that the
+method vectorProduct() <span style="mso-spacerun: yes"> </span>method receives
+two array parameters and returns another array – the vector product of the two
+arrays.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class Vector {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static void main(String[] args) {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] x = {5, 2, -3, 4, -2};<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] y = {2, 3, 5, -4, -6};<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] z;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>z = <b><span style='color:blue'>vectorProduct(x, y)</span></b>;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;The vector product is: &quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int k = 0; k &lt; z.length; k++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(z[k] + &quot;<span style="mso-spacerun: yes">&nbsp; </span><span style="mso-spacerun: yes">&nbsp;</span>&quot;);<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\n\nThe dot product is: &quot;+<b><span
+  style='color:blue'>dotProduct(x,y)</span></b>);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static <b><span style='color:blue'>double[]</span> </b>vectorProduct(<b><span
+  style='color:blue'>double[] a, double[] b</span></b>) { <o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] t = new double[a.length];<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int i = 0; i &lt; a.length; i++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>t[i] = a[i] * b[i];<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return t;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static double dotProduct(<b><span
+  style='color:blue'>double[] a, double[] b</span></b>) {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double sum=0;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int i = 0; i &lt; a.length; i++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>sum = a[i] * b[i];<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return sum;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 2</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>: The demonstrates array cloning.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class ArrayCloning {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static void main(String[] args)<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int k;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] x = {5, 2, -3, 4, -2};<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] y = new double[5];<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] z = {10, 25, 30, 45};<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] w;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><b><span style='color:blue'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>y = x;<span style="mso-spacerun: yes">&nbsp; </span></span></b><span
+  style='mso-tab-count:1'> </span><span style='font-size:11.0pt;mso-bidi-font-size:
+  10.0pt;font-family:"Times New Roman"'>// y and x refer to the same object. The object that was referenced by y is lost</span><span
+  style='font-family:"Times New Roman"'><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;The array referenced by y is: &quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(k = 0; k &lt; y.length; k++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(y[k] + &quot;<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='color:blue'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>x[0] = 200;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='color:blue'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>x[4] = 66;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\n\nThe array referenced by y is: &quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(k = 0; k &lt; y.length; k++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(y[k] + &quot;<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style='color:blue'>w = (double[])z.clone();</span></b> <span style="mso-spacerun: yes">&nbsp;</span><span
+  style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Times New Roman"'>// w and z refer to different objects</span><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>z[0] = 88;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>z[2] = -99;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\n\nThe array referenced by w is: &quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(k = 0; k &lt; w.length; k++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(w[k] + &quot;<span style="mso-spacerun: yes">&nbsp;&nbsp; </span>&quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 3:<span style="mso-spacerun: yes">  </span></span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The following examples shows
+that we can have array as an instance variable.<span style="mso-spacerun:
+yes">  </span>It also shows how array instance variable may be initialized by a
+constructor.<span style="mso-spacerun: yes">  </span>Notice that the Student
+class is in its own separate file.<b><o:p></o:p></b></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>class Student {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>private int iDNumber;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><b><span style='color:blue'>double[] quiz;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public Student(int iDNumber, <b><span
+  style='color:blue'>double[] quiz</span></b>) {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>this.iDNumber = iDNumber;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='color:blue'><span style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>this.quiz = quiz;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public int getID() <span style='mso-tab-count:
+  1'> </span>{<o:p></o:p></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return iDNumber;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public double getQuiz(int quizNumber) {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if(quizNumber &gt;= 1 &amp;&amp; quizNumber &lt;= quiz.length)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return quiz[quizNumber - 1];<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>else<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>return -1.0;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public void setQuiz(int quizNumber, double quizGrade) {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>if(quizNumber &gt;= 1 &amp;&amp; quizNumber &lt;= quiz.length)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>quiz[quizNumber - 1] = quizGrade;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public double sum() {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double sum = 0;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int k = 0; k &lt; quiz.length; k++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>sum += quiz[k];<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return sum;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public double average() {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return sum() / quiz.length;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public String toString() {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>String s = &quot;&quot;+iDNumber;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i = 0; i&lt;quiz.length; i++)<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp; </span>s += &quot;\t&quot;+quiz[i];<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>s += &quot;\t&quot;+average();<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return s;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>import java.util.Scanner;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class TestStudent {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static void main(String[] args)<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double[] quiz = {50, 30, 60, 55};<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style='color:blue'>Student student = new Student(980000, quiz);<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>/* destroy the object referenced by quiz, so that the only way to obtain quiz information is from the object referenced by student<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>*/<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style='color:blue'>quiz = null;<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Student information before changing grade:&quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(student);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>student.setQuiz(3, 90);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>student.setQuiz(4, 75);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\nStudent information after changing grades:&quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(student);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'>&nbsp;</p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 4:<span style="mso-spacerun: yes">  </span></span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The following example shows how
+to use </span><b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+color:blue'>array of objects</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>.<span style="mso-spacerun: yes">  </span>It uses
+the same Student class as in example 3 above to create an array of three
+students objects, each one having ID number and three quizzes.<span
+style="mso-spacerun: yes">  </span>The Program then prints the average of each
+students and the overall average for all students.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>import java.util.Scanner;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class TestStudent2 {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>static Scanner stdin = new Scanner(System.in);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>static final int STUDENT_COUNT = 3,<span style="mso-spacerun: yes">&nbsp; </span>QUIZZES_COUNT = 3;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static void main(String[] args) {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style='color:blue'>Student[] student = new Student[STUDENT_COUNT];<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>double sum=0;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int i = 0; i &lt; student.length; i++)<span
+  style='mso-tab-count:1'> </span>{<o:p></o:p></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\nCreating student #&quot;+ (i+1));<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style='color:blue'>student[i] = createStudent();<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\nID\tAverage&quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(int i = 0; i &lt; student.length; i++)<span
+  style='mso-tab-count:1'> </span>{<o:p></o:p></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(student[i].getID()+&quot;\t&quot;+student[i].average());<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>sum += student[i].sum();<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\nOverall average is: &quot; + sum/(STUDENT_COUNT*QUIZZES_COUNT));<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>static <b><span style='color:blue'>Student createStudent()</span></b> {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int id;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style='color:blue'>double[] quiz = new double[QUIZZES_COUNT];<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(&quot;Enter student ID# &quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>id = stdin.nextInt();<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\nEnter three quizzes for this student&quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for (int i=0; i&lt;quiz.length; i++) {<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(&quot;Quiz#&quot;+ (i+1)+ &quot; &quot;);<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><b><span
+  style='color:blue'>quiz[i] = stdin.nextDouble();<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><b><span style='color:blue'>Student s = new Student(id, quiz);<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>return s;<o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}<span style='mso-tab-count:1'>&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>Assignments<o:p></o:p></span></h1>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><b><span style='font-size:10.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><![endif]><span
+style='font-size:10.0pt'>Modify example 3 so that after the array is created
+(as in example 3), it displays a menu that allows the operations shown in the
+following figure to be performed in a loop until the Quit option is chosen.<b><o:p></o:p></b></span></p>
+
+<blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;tab-stops:.75in'><img border="0" src="fig07_1.gif" width="363" height="298"></p>
+
+</blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;tab-stops:.75in'>&nbsp;</p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'>Note:<span
+style="mso-spacerun: yes">  </span>If the first option is chosen, your program
+should prompt for and read a quiz number.<span style="mso-spacerun: yes"> 
+</span>It then calls the<b> getQuiz()</b> method to print it.<span
+style="mso-spacerun: yes">  </span>If option 3 is chosen, your program should
+prompts for and read the quiz number and the new grade for that quiz.<span
+style="mso-spacerun: yes">  </span>It then calls the <b>setQuiz()</b> method to
+change the grade and then display the updated student information.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><b><span style='font-size:10.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><![endif]><span
+style='font-size:10.0pt'>Modify example 4 as follows:<b><o:p></o:p></b></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l11 level1 lfo34;tab-stops:
+list .75in'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Add another method, </span><b><span
+style='font-size:10.0pt;color:blue'>static double quizAverege(Student[]
+student, int k)</span></b><span style='font-size:10.0pt'> that receives an
+array of student objects and a quiz number as parameters.<span
+style="mso-spacerun: yes">  </span>It then returns the average for that quiz.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l11 level1 lfo34;tab-stops:
+list .75in'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Now modifies the main
+method so that it prints :<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l20 level1 lfo36;tab-stops:
+list 1.0in'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>the ID number, grades
+and average of each student in a tabular form<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l20 level1 lfo36;tab-stops:
+list 1.0in'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>the average of each each
+quiz<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l20 level1 lfo36;tab-stops:
+list 1.0in'><![if !supportLists]><span style='font-size:10.0pt;font-family:
+"Courier New";mso-bidi-font-family:"Times New Roman"'>o<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>the overall average for
+all students.<o:p></o:p></span></p>
+
+<blockquote>
+  <blockquote>
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td width="100%"><img border="0" src="fig07_3a.gif" width="315" height="97"></td>
+      </tr>
+      <tr>
+        <td width="100%"><img border="0" src="fig07_3b.gif" width="316" height="306"></td>
+      </tr>
+    </table>
+  </blockquote>
+</blockquote>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Ahmadu Bello University Press wants to know the maximum, minimum, total, and average profit  gained from years 2005 to 2014. <br>Besides that, they are interested in knowing the difference between the maximum and minimum profit and those profits that are above average. <br>The profits are as follows.
+<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;tab-stops:.75in'><pre>
+	<b>Year Profit(&#8358)</b>
+	2005 5,000,000.34 
+	2006 2,005.000.00 
+	2007 3,020,000.97 
+	2008 5,057,800.20 
+	2009 4,500,000.67 
+	2010 5,000,000.00 
+	2011 3,048,900.56 
+	2012 4,800,000.50 
+	2013 2,980,000.71 
+	2014 4,909,000.80 </pre></p>
+
+<p style='margin-left:20px;margin-bottom:.0001pt;tab-stops:.75in'><span
+style='font-size:10.0pt'>(a) Create a class called <i>Profit</i> that has the following members<o:p></o:p></span></p>
+	<div style="margin-left:25px;">
+		<ol type="i">
+		 <li>Two array fields to store the profit and year named <i>profit</i> and <i>year</i> using appropriate data types.</li> 
+		 <li>A method called <i><span style="color:blue;">getMaxProfit()</span></i> that will return the maximum profit.</li> 
+		 <li>A method called <i><span style="color:blue;">getMinProfit()</span></i> that will return the minimum profit. </li>
+		 <li>A method called <i><span style="color:blue;">getSumOfProfit()</span></i> that will return the total profit. </li>
+		 <li>A method called <i><span style="color:blue;">getAverageProfit()</span></i> that will return the average profit. </li>
+		 <li>A method called <i><span style="color:blue;">getRange()</span></i> that will return the difference between the maximum and minimum profits. </li>
+		 <li>A method called <i><span style="color:blue;">showProfitBelowAverage()</span></i> that will display all profits that are below average. </li>
+		</ol>
+	</div>
+	<p style='margin-left:20px;margin-bottom:.0001pt;tab-stops:.75in'><span
+style='font-size:10.0pt'>(b) Create a test class that will instantiate the <i>Profit</i> class and display the required results with suitable headings and labels<o:p></o:p></span></p>
+</div>
+
+</body>
+
+</html>

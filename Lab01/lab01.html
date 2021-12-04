@@ -1,0 +1,160 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>LAB01-Department of Computer Science</title>
+<body>
+	
+	<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB01</h3>
+	<h3>Objectives</h3>
+	<h4>To gain experience with:</h4>
+	<ul>
+		<li><a href="#print">Printing Programs Output</a></li>
+		<li><a href="#sequence">Escape Sequences</a></li> 
+		<li><a href="#assignment">Assignment</a></li>
+	</ul>
+	
+	<h3 name="print" id="print">Printing Output</h3>
+	<p>A print statement is actually a call to the <i>print</i> or <i>println</i> method of the <font style="color:blue;">System.out</font> object. The print method takes exactly one argument or no arguments. However, it can take string or numeric value</p>
+	<h4>There are three kinds of print statements in java:</h4>
+	<ol>
+		<li><font style="color:blue;">System.out.print(argument)</font> just print out its argument.
+		<h4>Example1: Type and run the following program and observe the output</h4>
+	<div style="background-color:gray;color:black;width:700px;font-size:18px;color:#FFFFFF;">
+		<pre>
+//Printing.java
+public class Printing{
+	public static void main(String[] args){
+		System.out.print("Computer");
+		System.out.print("Science");
+		System.out.print("Department");
+	}
+}
+		</pre>
+	</div>
+		</li>
+		<li><font style="color:blue;">System.out.println(argument)</font> prints out its argumenta nd ends the line.
+	<h4>Example2: Modify the example1 program above, save as PrintLine.java, and compile, run, and observe the output</h4>
+	<h4 style="color:red;font-weight:800;">Note that "print" is to be replaced with "println" method</h4>
+	<div style="background-color:gray;color:black;width:700px;font-size:18px;color:#FFFFFF;">
+		<pre>
+//PrintingLine.java
+public class PrintingLine{
+	public static void main(String[] args){
+		System.out.println(Computer");
+		System.out.println("Science");
+		System.out.println("Department");
+	}
+}
+		</pre>
+	</div>
+		</li>
+		<li><font style="color:blue;">System.out.printf(format, argument)</font>, gives more control over how things are printed.
+			<h3>Format String::</h3>
+			<p>Composed of literals and format specifiers. Arguments are required only if there are format specifiers in the format string. Format specifiers include: flags, width, precision, and conversion characters in the following sequence:</p>
+			<p><font style="color:red;">% [flags] [width] [.precision] conversion-character</font> ( square brackets denote optional parameters )</p>
+			<h4>Flags:</h3>
+			<pre style="font-size:18px;">
+- : left-justify ( default is to right-justify )
++ : output a plus ( + ) or minus ( - ) sign for a numerical value
+0 : forces numerical values to be zero-padded ( default is blank padding )
+, : comma grouping separator (for numbers > 1000)
+  : space will display a minus sign if the number is negative or a space if it is positive
+		</pre>
+		
+		<h4>Width:</h4>
+		<p>Specifies the field width for outputting the argument and represents the minimum number of characters to be written to the output. Include space for expected commas and a decimal point in the determination of the width for numerical values.</p>
+		
+		<h4>Precision:</h4>
+		<p>Used to restrict the output depending on the conversion. It specifies the number of digits of precision when outputting floating-point values or the length of a substring to extract from a String. Numbers are rounded to the specified precision</p>
+		
+		<h3>Conversion-Characters:</h3>
+		<pre style="font-size:18px;">
+d : decimal integer [byte, short, int, long]
+f : floating-point number [float, double]
+c : character Capital C will uppercase the letter
+s : String Capital S will uppercase all the letters in the string
+h : hashcode A hashcode is like an address. This is useful for printing a reference
+n : newline Platform specific newline character- use %n instead of \n for greater compatibility
+</pre>
+		</li>
+	</ol>
+	
+	<h4>Example3: Study, type, run and compile the following program and observe the output</h4>
+	<div style="background-color:gray;color:black;width:900px;font-size:18px;color:#FFFFFF;">
+		<pre>
+//PrintingFormat.java
+public class PrintingFormat{
+	public static void main(String[] args){
+		System.out.printf("%d",60);
+		System.out.println();
+		
+		System.out.printf("%03d%n",9);
+		
+		System.out.printf("PI %.3f",3.141527);
+		System.out.println();
+		
+		System.out.printf("Total is: N%,.2f%n", 84785.8978);
+		
+		System.out.printf("%-10S%n","Department of Computer Science");
+		
+		System.out.printf("% .2f",-67.8917);
+		System.out.println();
+		
+		System.out.printf("% .2f",67.8917);
+		System.out.println();
+		
+		System.out.printf("%C",'a');
+		System.out.println();
+
+	}
+}
+		</pre>
+	</div>
+	<h3 name="sequence" id="sequence">Escape Sequence</h3>
+	<p>A character preceded by a backslash (\) is an escape sequence and has a special meaning to the compiler.</p>
+	<p>Following table shows the Java escape sequences -</p>
+	<table>
+		<tr><th>Escape Sequence</th><th>Description</th></tr>
+		<tr><td>\t </td><td>Inserts a tab in the text at this point.</td></tr>
+		<tr><td>\b </td><td>Inserts a backspace in the text at this point.</td></tr>
+		<tr><td>\n </td><td>Inserts a newline in the text at this point.</td></tr>
+		<tr><td>\r </td><td>Inserts a carriage return in the text at this point..</td></tr>
+		<tr><td>\f </td><td>Inserts a form feed in the text at this point.</td></tr>
+		<tr><td>\' </td><td>Inserts a single quote character in the text at this point.</td></tr>
+		<tr><td>\" </td><td>Inserts a double quote character in the text at this point.</td></tr>
+		<tr><td>\\ </td><td>Inserts a backslash character in the text at this point.</td></tr>
+	</table>
+	<p>When an escape sequence is encountered in a print statement, the compiler interprets it accordingly.</p>
+	<h4>Example: Study, Type, compile and run the following program and observe the output</h4>
+	<div style="background-color:gray;color:black;width:1040px;font-size:16px;color:#FFFFFF;">
+		<pre>
+// EscapeSequence.java
+public class EscapeSequence {
+
+ public static void main(String args[]) {
+  System.out.println("ABU said \"To pass, you must work hard!\".\n");
+  System.out.println("Two Sided Triangles\n*\t*****\n**\t ****\n***\t  ***\n****\t   **\n*****\t    *\n");
+  System.out.println("A Diamond \n  *\n\r ***\n\r*****\n ***\n  *\n");
+  System.out.println("A Letter S\n  *\n\b*   *\n  *  \n*   *\n  *");
+  System.out.println(" E =   46.12 * 6.9 - 2.5 * 10\n\t\b______________________\n\t   90.5 * 11.6");
+ }
+}
+		</pre>
+	</div>
+	
+	<h3 id="assignment">Assignment</h3>
+	<p>1. Write a program that displays the following pattern</p>
+		<img src="pattern.png" title="Pattern"/>
+			  
+	<p>2. Write a program that displays the following table</p>
+	<pre>
+	1	2	3	4
+1   	1	2	3	4
+2	2	4	6	16
+3	3	6	9	12
+4	4	8	12	16
+	</pre>
+</body>
+</head>
+</html>

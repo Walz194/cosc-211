@@ -1,0 +1,1300 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab11_files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab08_files/editdata.mso">
+
+<title>Lab08</title>
+
+</style>
+
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB08</h3>
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<p class=MsoNormal style='margin-left:.25in'><span style='font-size:10.0pt'>To
+gain experience with:<o:p></o:p></span></p>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Declaring, creating and accessing both
+     regular and rugged 2-D arrays<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Using 2-D arrays in methods (as
+     parameters and as return type)<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l1 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Cloning 2-D arrays<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Brief Review of 2-D Arrays</span> </h1>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Why 2D-arrays?<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">    </span>A
+2D-array is used to store information that would otherwise require parallel
+1D-arrays to store.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:23.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=65 valign=top style='width:48.6pt;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>ID<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>quiz1<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>quiz2<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>quiz3<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>quiz4<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>quiz5<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>quiz6<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-bottom:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>quiz7<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=65 valign=top style='width:48.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>900000<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>50.5<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>40.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>60.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>0.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>55.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>30.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>48.0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=65 valign=top style='width:48.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>920000<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>70.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>60.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>75.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>90.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>66.5<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>75.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>80.0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=65 valign=top style='width:48.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>930520<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>65.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>70.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>65.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>80.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>78.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>50.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>69.0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=65 valign=top style='width:48.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>940000<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>80.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>90.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>95.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>85.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>100.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>88.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>92.0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=65 valign=top style='width:48.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>953478<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>40.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>30.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>50.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>55.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>45.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>35.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>0.0<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=65 valign=top style='width:48.6pt;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>972893<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:none;border-right:solid windowtext .5pt;
+  mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>60.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>50.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>39.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>70.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>55.9<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>70.0<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt'>59.0<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>What is a Java 2D-array?<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">   </span>A Java
+2D-array is an array of arrays of possibly different sizes.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Declaring 2D-arrays:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>A 2D-array in which each row has the same number of
+elements is declared as:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'><span style='mso-tab-count:1'>                </span>type[
+][ ]<span style="mso-spacerun: yes">  </span>arrayName<span
+style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+</span>new<span style="mso-spacerun: yes"> 
+</span>type[numberOfRows][numberOfColumns];<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style='mso-tab-count:1'>                </span><span
+style='color:blue'>double[ ][ ]<span style="mso-spacerun: yes"> 
+</span>quiz<span style="mso-spacerun: yes">  </span>=<span style="mso-spacerun:
+yes">  </span>new<span style="mso-spacerun: yes">  </span>double[6][7];<o:p></o:p></span></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>The above declaration is equivalent to either of the
+following:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.5in;border-collapse:
+ collapse;border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=241 valign=top style='width:180.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>double[][] quiz;<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>quiz = new<span
+  style="mso-spacerun: yes">  </span>double[6]<b><span style='color:blue'>[]</span></b>;<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>quiz[0]<span
+  style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+  </span>new<span style="mso-spacerun: yes">  </span>double[7]; <o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>quiz[1]<span
+  style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+  </span>new<span style="mso-spacerun: yes">  </span>double[7]; <o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>quiz[2]<span
+  style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+  </span>new<span style="mso-spacerun: yes">  </span>double[7];<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>quiz[3]<span
+  style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+  </span>new<span style="mso-spacerun: yes">  </span>double[7];<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>quiz[4]<span
+  style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+  </span>new<span style="mso-spacerun: yes">  </span>double[7];<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'>quiz[5]<span
+  style="mso-spacerun: yes">  </span>=<span style="mso-spacerun: yes"> 
+  </span>new<span style="mso-spacerun: yes">  </span>double[7];<o:p></o:p></span></p>
+  </td>
+  <td width=396 valign=top style='width:297.0pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes"> </span>double[][]<span style="mso-spacerun: yes"> 
+  </span>quiz<span style="mso-spacerun: yes">  </span>=<span
+  style="mso-spacerun: yes">  </span>new<span style="mso-spacerun: yes"> 
+  </span>double[6]<b><span style='color:blue'>[]</span></b>;<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes"> </span>for(int k = 0; k &lt; quiz.length; k++)<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style="mso-spacerun: yes">     </span>quiz[k]<span style="mso-spacerun:
+  yes">  </span>=<span style="mso-spacerun: yes">  </span>new<span
+  style="mso-spacerun: yes">  </span>double[7];<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><img border="0" src="fig08_0.gif" width="600" height="205"></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Notes:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoBodyText2><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>It
+is obvious from the above declarations that each row of a 2-D array, quiz[i] is
+an independent 1-D array.<span style="mso-spacerun: yes">  </span>Thus, we
+could use it wherever a 1-D array is expected.<span style="mso-spacerun: yes"> 
+</span>For example, if there is a method average with the following header:<o:p></o:p></span></p>
+
+<p class=MsoBodyText2 style='margin-left:.5in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public static double
+average(<b><span style='color:blue'>double[] a</span></b>) {<o:p></o:p></span></p>
+
+<p class=MsoBodyText2 style='margin-left:.5in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>. . .<o:p></o:p></span></p>
+
+<p class=MsoBodyText2 style='margin-left:.5in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+
+<p class=MsoBodyText2><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Then
+to get the average of the i<sup>th</sup> row, we could call it as:<o:p></o:p></span></p>
+
+<p class=MsoBodyText2 style='text-indent:.5in'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;font-family:"Courier New"'>double avg = average(<b><span
+style='color:blue'>quiz[i]</span></b>);</span><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Declaring <span style='color:blue'>rugged</span>
+2D-arrays:</span></b><span style='font-size:11.0pt;mso-bidi-font-size:12.0pt'> <o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Because each row in a 2-D array is an independent
+1-D array, it follows that the rows of a 2-D array do not need to be all of the
+same size.<span style="mso-spacerun: yes">  </span>For example, if in the above
+declaration, we change the declaration of rows 0 and 4 as follows, <o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:blue'>quiz[0]<span style="mso-spacerun:
+yes">  </span>=<span style="mso-spacerun: yes">  </span>new<span
+style="mso-spacerun: yes">  </span>double[3];<o:p></o:p></span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:1.0in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt;mso-bidi-font-size:
+12.0pt;font-family:"Courier New";color:blue'>quiz[4]<span style="mso-spacerun:
+yes">  </span>=<span style="mso-spacerun: yes">  </span>new<span
+style="mso-spacerun: yes">  </span>double[5];</span></b><span style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt;color:blue'><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Then we have the following <b>rugged</b> array.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><img border="0" src="fig08_1.gif" width="595" height="210"></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Accessing individual elements:<o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Individual element of a 2-D array is accessed by
+specify the index of row and column. For example<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+font-family:"Courier New"'>quiz[2][5] = 95.0;<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Declaring, Creating and Initializing a 2D-array in
+one step:<o:p></o:p></span></b></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>If we have the values, we could directly declare,
+create and initialize a 2-D array in one step.<span style="mso-spacerun: yes"> 
+</span>For example:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Courier New"'>int[][] a = { {1, 0, 12, -1}, <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-tab-count:1'>     </span><span
+style="mso-spacerun: yes">   </span>{7, -3, 2, 5 },<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-tab-count:1'>     </span><span
+style="mso-spacerun: yes">   </span>{-5, -2, 2, 9} };<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Again, the rows do not have to be all of the same
+size.<span style="mso-spacerun: yes">  </span>For example:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-indent:.5in'><span style='font-size:11.0pt;
+mso-bidi-font-size:10.0pt;font-family:"Courier New";mso-fareast-font-family:
+"Courier New"'>int[][] a = { {1, 0, 12, -1}, <o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-tab-count:1'>     </span><span
+style="mso-spacerun: yes">   </span>{7, 5 },<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-indent:.5in'><span
+style='font-size:11.0pt;mso-bidi-font-size:10.0pt;font-family:"Courier New";
+mso-fareast-font-family:"Courier New"'><span style='mso-tab-count:1'>     </span><span
+style="mso-spacerun: yes">   </span>{-5, -2, 2, 9} };<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:8.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 1:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'> The following reads a rugged array one row at a
+time and then prints it.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>import java.util.Scanner;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>import java.util.StringTokenizer;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class Rugged2DArray {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>public static void main(String[] args) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>Scanner stdin = new Scanner(System.in);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int[][] a = new int[3][];</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>a[0] = new int[5];</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>a[1] = new int[3];</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>a[2] = new int[4];</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style='font-size:8.0pt;mso-bidi-font-size:
+  10.0pt'><span style='mso-tab-count:1'>&nbsp;&nbsp; </span><o:p></o:p></span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>int row, column;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:2'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(row = 0; row &lt; a.length; row++)<span
+  style='mso-tab-count:1'>&nbsp;&nbsp;&nbsp;&nbsp; </span>{</pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Enter &quot;+a[row].length + &quot; elements for row#&quot; + (row + 1));</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>String inputLine = stdin.nextLine();</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>StringTokenizer tokenizer = new StringTokenizer(inputLine);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:3'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(column = 0; column &lt; a[row].length; column++)</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:4'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>a[row][column] = Integer.parseInt(tokenizer.nextToken());</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>System.out.println(&quot;\nThe array elements are:\n&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>for(row = 0; row &lt; a.length; row++) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>for(column = 0; column &lt; a[row].length; column++)</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.print(a[row][column] + &quot;<span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>System.out.println();</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;\n\n&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>}</pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<h1>&nbsp; </h1>
+
+<h1><span style='font-size:12.0pt;color:blue'>2.<span style="mso-spacerun:
+yes">  </span>Using 2-D arrays in methods</span> </h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">    </span>Like 1-D
+array, 2D-array can be passed as parameter to a method.<span
+style="mso-spacerun: yes">  </span>Also, a method can return a 2-D array.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 2</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>: The demonstrates array cloning.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>import java.util.Scanner;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>import java.util.StringTokenizer;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class Matrix {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span>static Scanner stdin = new Scanner(System.in);<span
+  style='mso-tab-count:1'>&nbsp; </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>public static <b><span
+  style='color:blue'>double[][]</span></b> sum(<b><span style='color:blue'>double[][] a</span></b>, <b><span
+  style='color:blue'>double[][] b</span></b>) {</pre><pre style='tab-stops:
+  .25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>int row = a.length;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>int col = a[0].length;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>double[][] c = new double[row][col];</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>for (int i=0; i&lt;row; i++) </pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span>for (int j=0; j&lt;col; j++) </pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:2'>&nbsp;&nbsp; </span>c[i][j] = a[i][j] + b[i][j];</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>return c;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>public static <b><span
+  style='color:blue'>double[][]</span></b> createArray(<b><span
+  style='color:blue'>int row, int col</span></b>) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>double[][] array = new double[row][col];</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>System.out.println(&quot;Enter a &quot;+row+&quot; by &quot;+col+&quot; matrix row-wise&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>for (int i=0; i&lt;row; i++) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>String input = stdin.nextLine();</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>StringTokenizer st = new StringTokenizer(input);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>for (int j=0; j&lt;col; j++) </pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:2'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;</span>array[i][j] = Double.parseDouble(st.nextToken());</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>}<span
+  style='mso-tab-count:1'>&nbsp; </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp; </span><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>return array;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>public static <b><span
+  style='color:blue'>void</span></b> print(<b><span style='color:blue'>double[][] a</span></b>) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>int row = a.length;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>int col = a[0].length;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>for (int i=0; i&lt;row; i++) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span>for (int j=0; j&lt;col; j++) </pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:2'>&nbsp;&nbsp; </span>System.out.print(a[i][j]+ &quot;\t&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span><span
+  style='mso-tab-count:1'> </span>System.out.println();</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span><span
+  style='mso-tab-count:1'> </span><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>}<span
+  style='mso-tab-count:1'>&nbsp; </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;</span>public static void main(String[] args) throws IOException {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>int row, column;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>System.out.print(&quot;Enter number of rows: &quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>row = Integer.parseInt(stdin.readLine());</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>System.out.print(&quot;Enter number of columns: &quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>column = Integer.parseInt(stdin.readLine());</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>double[][] a = <b><span style='color:blue'>createArray(row, column)</span></b>;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>double[][] b = <b><span style='color:blue'>createArray(row, column);</span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>double[][] c = <b><span style='color:blue'>sum(a,b);</span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span>System.out.println(&quot;The sum of the two arrays is&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span
+  style='mso-tab-count:1'>&nbsp;&nbsp; </span><b><span style='color:blue'>print(c);</span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+&nbsp;
+
+<h1><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>Cloning 2-D arrays</span> </h1>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">    </span>Like 1-D
+array, we can make a copy of an array using the clone method. For example, the
+2D-array quiz can be clone using:<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>double[][] quizClone = (double[][]) quiz.clone;<o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoBodyText3>However, the above statement only copies the references
+to the rows of quiz. The values of the actual elements are not copied.<span
+style="mso-spacerun: yes">  </span>That is, any changes made to quiz will
+affect quizClone.<span style="mso-spacerun: yes">  </span>This is <b><span
+style='color:blue'>called shallow</span></b> cloning.<span style="mso-spacerun:
+yes">  </span>The following figure shows the effect of shallow cloning:</p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><img border="0" src="fig08_4.gif" width="596" height="423"></p>
+
+<p class=MsoNormal style='margin-left:.5in;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>To actually make a complete copy of quiz – called <b><span
+style='color:blue'>deep clonning</span></b>, we need to also clone each row of
+quiz and assigned to the corresponding row of quizClone.<span
+style="mso-spacerun: yes">  </span>Using the staments of the form:<span
+style="mso-spacerun: yes">    </span><b><span style='color:blue'>quizClone[i] =
+(double[]) quiz[i].clone();</span></b><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 3:<span style="mso-spacerun: yes">  </span></span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The following shows shallow
+cloning.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class ShallowCloning {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'> public static void main(String args[]) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'> <span
+  style='mso-tab-count:1'>&nbsp; </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>double[][] a = {{1, 2, 3},</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{4, 5, 6},</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{7, 8, 9}};</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Printing array a&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(a);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
+  style='color:blue'>double[][] b = (double[][])a.clone();<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Printing array b<span style="mso-spacerun: yes">&nbsp; </span>- clone of a&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(b);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>b[1][1] = 20;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Printing array b after making chages to it&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(b);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>System.out.println(&quot;Printing array a after changing its clone&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(a);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Times New Roman";
+mso-fareast-font-family:"Times New Roman";color:black;mso-ansi-language:EN-US;
+mso-fareast-language:EN-US;mso-bidi-language:AR-SA'><br clear=all
+style='page-break-before:always'>
+</span></b>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 4:<span style="mso-spacerun: yes">  </span></span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The following shows deep
+cloning:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>public class DeepCloning {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'> public static void main(String args[]) {</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'> <span
+  style='mso-tab-count:1'>&nbsp; </span></pre><pre style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>double[][] a = {{1, 2, 3},</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{4, 5, 6},</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>{7, 8, 9}};</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Printing array a&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(a);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span><b><span
+  style='color:blue'>double[][] b = (double[][])a.clone();<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>for (int i=0; i&lt;b.length; i++)<o:p></o:p></span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><b><span
+  style='color:blue'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span>b[i] = (double[])a[i].clone();</span></b></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>System.out.println(&quot;Printing array b<span style="mso-spacerun: yes">&nbsp; </span>- clone of a&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(b);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>b[1][1] = 20;</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>System.out.println(&quot;Printing array b after making chages to it&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(b);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span></pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp;&nbsp;</span>System.out.println(&quot;Printing array a after changing its clone&quot;);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp;&nbsp;&nbsp; </span>Matrix.print(a);</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'><span style="mso-spacerun: yes">&nbsp; </span>}</pre><pre
+  style='tab-stops:.25in .5in 45.8pt 53.3pt 91.6pt 137.4pt 183.2pt 229.0pt 274.8pt 320.6pt 366.4pt 412.2pt 458.0pt 503.8pt 549.6pt 595.4pt 641.2pt 687.0pt 732.8pt'>}</pre></td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Assignments<o:p></o:p></span></h1>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><span style='font-size:10.0pt'>1.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt'>Modify the Matrix class
+of Example2 by adding a static method <b>transpose</b>, that returns the
+transpose of a matrix it receives as parameter.<span style="mso-spacerun:
+yes">  </span>Now call this method from the main method to get the transpose of
+the array c (the sum of the two matrices) and then print it.<span
+style="mso-spacerun: yes">  </span>Fig 1 below shows the sample run of the
+modified program.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<table border=0 cellspacing=0 cellpadding=0 style='margin-left:.5in;border-collapse:
+ collapse;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=356 valign=top style='width:267.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><img border="0" src="fig08_2.gif" width="247" height="262"></p>
+  </td>
+  <td width=356 valign=top style='width:267.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><img border="0" src="fig08_3.gif" width="255" height="221"></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'><span style='mso-tab-count:1'>                        </span><b>fig
+  2<o:p></o:p></b></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=356 valign=top style='width:267.1pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+  margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+  margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>fig
+  1</span></b><span style='font-size:10.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=356 valign=top style='width:267.15pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+  margin-bottom:.0001pt;tab-stops:.75in'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt'><o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><b><span style='font-size:10.0pt'>2.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><![endif]><span
+style='font-size:10.0pt'>The file <b><a href="attend.txt">attend.txt</a></b> contains attendance of 15
+students in 20 lectures, with 1 representing present and 0 representing
+absent.<span style="mso-spacerun: yes">  </span>Write a program that reads the
+data from the file into a 2-D integer array, <b>absences,</b> of size 15 by 21,
+storing the ID numbers in the first column and the absences in the remaining 20
+columns.<span style="mso-spacerun: yes">  </span>Your program should count the
+number of absences of each student and store the result in a 2-D integer array,
+<b>numberOfAbsences</b>, of size 15 by 2, storing the ID in the first column
+and the number of absences in the second.<span style="mso-spacerun: yes"> 
+</span>Finally print the content of the array numberOfAbsences.<span
+style="mso-spacerun: yes">  </span>Fig 2 above shows the sample run of the
+program.<b><o:p></o:p></b></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.5in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l32 level1 lfo11;tab-stops:
+list .5in left .75in'><![if !supportLists]><b><span style='font-size:10.0pt'>3.<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span></span></b><![endif]><span
+style='font-size:10.0pt'>Modify assignment 2 above so that the program prints
+only those students whose number of absences is more than 5.<span
+style="mso-spacerun: yes">  </span>Your program must define and make use of the
+following methods:<b><o:p></o:p></b></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l35 level1 lfo37;tab-stops:
+list .75in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-weight:
+bold'>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-size:10.0pt'>public static int[][]
+createArray(String fname,<span style="mso-spacerun: yes">  </span>int rows, int
+cols)</span></b><span style='font-size:10.0pt'> : That receives name of the
+file and the number of rows and columns as parameter, then opens the file and
+uses it to create a 2-D array of int and returns it.<b><o:p></o:p></b></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt;text-indent:-.25in;mso-list:l35 level1 lfo37;tab-stops:
+list .75in'><![if !supportLists]><span style='font-size:10.0pt;mso-bidi-font-weight:
+bold'>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><b><span style='font-size:10.0pt'>public static int[][]
+countAbsences(double[][] absences)</span></b><span style='font-size:10.0pt'> :
+to counts the absences of each student.<b><o:p></o:p></b></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.75in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Home Work<o:p></o:p></span></h1>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'>A square
+matrix is said to be a magic square if it satisfies the following conditions:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'>The
+elements are unique<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'>adding
+the elements in each row, each column and each of the two diagonals gives the
+same result. For example the following is a magic square:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.75in;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=48 valign=top style='width:.5in;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>16<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>3<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>2<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>13<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=48 valign=top style='width:.5in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>5<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>10<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>11<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>8<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=48 valign=top style='width:.5in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>9<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>6<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>7<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>12<o:p></o:p></span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=48 valign=top style='width:.5in;border:solid windowtext .5pt;
+  border-top:none;mso-border-top-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>4<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>15<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>14<o:p></o:p></span></p>
+  </td>
+  <td width=48 valign=top style='width:.5in;border-top:none;border-left:none;
+  border-bottom:solid windowtext .5pt;border-right:solid windowtext .5pt;
+  mso-border-top-alt:solid windowtext .5pt;mso-border-left-alt:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.75in'><span
+  style='font-size:10.0pt'>1<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'>Write a
+program that first reads the number size of a square matrix, then reads
+elements of the matrix and prints one of the messages “IS A MAGIC SQUARE” or
+“IS NOT A MAGIC SQUARE” accordingly.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><span style='font-size:10.0pt'>Your
+program must include at least the following methods:<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>static
+int sumRow(int[][] a,<span style="mso-spacerun: yes">  </span>int i)</span></b><span
+style='font-size:10.0pt'> : That returns the sum of row i<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>static
+int sumColumn(int[][] a, int i)</span></b><span style='font-size:10.0pt'>: That
+returns the sum of columns i<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>static
+int sumDiagonal(int[][] a, boolean mainDiag)</span></b><span style='font-size:
+10.0pt'> : That returns the sum of the main diagonal if mainDiag is true or the
+sum of the minor diagonal if mainDiag is false.<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>static
+boolaean isUnique(int[][] a)</span></b><span style='font-size:10.0pt'> : That
+returns true if all the elments are unique<o:p></o:p></span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt;tab-stops:.75in'><b><span style='font-size:10.0pt'>static
+boolean isMagic(int[][] a)</span></b><span style='font-size:10.0pt'>: That
+returns true if the square is magic and false otherwise.<o:p></o:p></span></p>
+
+</div>
+
+</body>
+
+</html>

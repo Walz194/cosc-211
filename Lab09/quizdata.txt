@@ -1,0 +1,10 @@
+971942 |Usman Ibrahim  | 87 | 77 | 53
+971986 |Nasir Muhammad | 84 | 69 | 65
+972706 |Farouk Isah    | 94 | 99 | 80
+973069 |Shehu Amir     | 90 | 77 | 49
+973178 |Yakub Umar     | 98 | 78 | 63
+973410 |Abdullah Sani  | 93 | 82 | 48
+974079 |Bashir Othman  | 85 | 79 | 89
+974130 |Junaidu Tukur  | 84 | 82 | 61
+974201 |Adamu Hassan   | 93 | 99 | 76
+974705 |Hussain Ahmad  | 89 | 94 | 71

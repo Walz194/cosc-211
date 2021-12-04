@@ -1,0 +1,962 @@
+<html xmlns:v="urn:schemas-microsoft-com:vml"
+xmlns:o="urn:schemas-microsoft-com:office:office"
+xmlns:w="urn:schemas-microsoft-com:office:word"
+xmlns="http://www.w3.org/TR/REC-html40">
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=windows-1252">
+<meta name=ProgId content=FrontPage.Editor.Document>
+<meta name=Generator content="Microsoft FrontPage 4.0">
+<meta name=Originator content="Microsoft Word 9">
+<link rel=File-List href="./lab04_files/filelist.xml">
+<link rel=Edit-Time-Data href="./lab04_files/editdata.mso">
+</head>
+
+<body lang=EN-US link=blue vlink=purple style='tab-interval:.5in'>
+
+<div class=Section1>
+
+<h2 style="text-align:center;">Department of Computer Science<br> Faculty of Physical Sciences<br>Ahmadu Bello University, Zaria</h2>
+	<h3>COSC 211 : Object Oriented Programming I - LAB04</h3>
+
+<br style='mso-ignore:vglayout' clear=ALL>
+
+<h1><span style='font-size:12.0pt;color:blue'>Objectives:<o:p></o:p></span></h1>
+
+<ul style='margin-top:0in' type=disc>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Learn how to create classes that can be
+     used in creating objects<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Understand the purpose of constructors
+     and how they differ from methods <o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Differentiate between static and instant
+     variables (and methods)<o:p></o:p></span></li>
+ <li class=MsoNormal style='mso-list:l0 level1 lfo2;tab-stops:list .5in'><span
+     lang=EN-GB style='font-size:10.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:
+     EN-GB;mso-bidi-font-weight:bold'>Differentiate between <span
+     style="mso-spacerun: yes"> </span>accessor and mutator methods<o:p></o:p></span></li>
+</ul>
+
+<p class=MsoNormal><b style='mso-bidi-font-weight:normal'><span lang=EN-GB
+style='font-size:8.0pt;mso-bidi-font-size:12.0pt;mso-ansi-language:EN-GB'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></b></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>1.<span style="mso-spacerun:
+yes">  </span>Classes as factory of objects<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>So far, all the classes we have been written
+are applications containing the main method.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Another type of class is that which is written not
+necessarily to be executed as an application, but to be used in
+creating objects.<span style="mso-spacerun: yes">  </span>Such type of classes
+are designed such that they describe the state and methods for a set of
+objects.<span style="mso-spacerun: yes">  </span>This is achieved by using
+instant variables, instant methods and constructors.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>Instant Variables:</span></b><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><span style="mso-spacerun:
+yes">  </span></span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>These
+are variables declared without using the </span><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>static</span></b><span style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt'> keyword.<span style="mso-spacerun: yes"> 
+</span>Such variables are only accessed through an object of the class and each
+object has its own copy of the variables – hence the name instant. <span
+style="mso-spacerun: yes"> </span>Instant variables are used to store the state
+of an object and are usually declared as </span><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>private</span></b><span style='font-size:
+10.0pt;mso-bidi-font-size:12.0pt'> so that they cannot be accessed directly by
+other objects.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>Instant methods:</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><span style="mso-spacerun:
+yes">  </span>These are methods declared without using the </span><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>static</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> keyword.<span
+style="mso-spacerun: yes">  </span>They are normally used to describe the
+behavior of objects of a particular class.<span style="mso-spacerun: yes"> 
+</span>Instant methods are normally declared as </span><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>public</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> so that they could be
+accessed by other objects.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>Constructor:</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'> These are used to
+initialize the fields (variables) of an object at the time the object is being
+created.<span style="mso-spacerun: yes">  </span>Constructors must have the
+same name as the class, they have no return type and they are implicitly
+public. <o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>Example 1:</span></b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><span style="mso-spacerun: yes">  </span>The
+following shows two classes.<span style="mso-spacerun: yes">  </span>A class,
+Box, which specify the fields, a constructor and methods of a box object, and a
+class, BoxDemo, which creates two Box objects and called their methods.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:.9pt;border-collapse:
+ collapse;border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:
+ 0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=708 valign=top style='width:531.0pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public
+  class Box {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private double length , width , height;<span
+  style="mso-spacerun: yes">  </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;color:blue'>//instance variables</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public Box(double boxLength , double
+  boxWidth , double boxHeight) { </span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;color:blue'>//constructor</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>length = boxLength;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>width = boxWidth;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>height = boxHeight;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public double volume() {<span
+  style="mso-spacerun: yes">     </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;color:blue'><span style="mso-spacerun:
+  yes"> </span>//instant methods</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return length * width * height;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public double surfaceArea() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return 2*(length*width + length*height +
+  width*height);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:0in;margin-left:.25in;
+margin-bottom:.0001pt'><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='border-collapse:collapse;
+ border:none;mso-border-alt:solid windowtext .5pt;mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=712 valign=top style='width:534.25pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public
+  class BoxDemo {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Create two Box objects<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>Box box1 = new Box(20.0, 10.0, 15.0);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>Box box2 = new Box(6.0, 4.0, 2.0);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>double volume, area;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Get and display volume and surface
+  area of box1<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>volume = box1.volume();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>area = box1.surfaceArea();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The volume of
+  box1 is &quot; + volume + &quot; cubic cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The surface
+  area of box1 is &quot;+area+&quot; square cm\n&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Get and display volume of surface
+  area box2<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The volume of
+  box2 is &quot; + box2.volume() + &quot; cubic cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The surface
+  area of box2 is &quot;+area+&quot; square cm\n&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1 style='margin-top:.3pt;margin-right:0in;margin-bottom:.3pt;margin-left:
+0in'><span style='font-size:12.0pt;color:blue'>2.<span style="mso-spacerun:
+yes">  </span>Difference between static and instance variables<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'>If a variable is declared as </span><b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>static </span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>then there will be only one
+copy of the variable, which can be access though the class name, even without
+creating any object of the class.<span style="mso-spacerun: yes">  </span>Thus,
+such variables are sometimes called </span><b><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt;color:blue'>class variables</span></b><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>.<span style="mso-spacerun:
+yes">  </span>Such a variable cannot be used to store the state of an object
+since each object has its own state.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin-top:3.0pt;margin-right:0in;margin-bottom:0in;margin-left:0in;
+margin-bottom:.0001pt'><b><span style='font-size:10.0pt'>Example 2:</span></b><span
+style='font-size:10.0pt'><span style="mso-spacerun: yes">  </span>The following
+example shows the difference between static and non-static variables.<span
+style="mso-spacerun: yes">  </span>Notice that both the class Circle and the
+class CircleDemo are stored in the same file.<span style="mso-spacerun: yes"> 
+</span>In this case, only one of the classes should be declared as public – the
+one containing the main method.<span style="mso-spacerun: yes">  </span>The file
+should also have the same name as this public class.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:5.4pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=702 valign=top style='width:526.5pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>//
+  Demonstrating the use of static variables.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  Circle {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private </span><b><span style='font-size:
+  10.0pt;mso-bidi-font-size:12.0pt;color:blue'>static</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>
+  int numberOfCircles = 0;<span style="mso-spacerun: yes">   </span></span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>//a static
+  variable</span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private double radius;<span
+  style='mso-tab-count:1'>     </span><span style='mso-tab-count:1'>      </span></span><b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;color:blue'>//instance
+  variables</span></b><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt;
+  font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public Circle(double circleRadius) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>numberOfCircles++;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>radius = circleRadius;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public double area() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return Math.PI * radius * radius;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public double circumference() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return 2.0 * Math.PI * radius;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static int getNumberOfCircles() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return numberOfCircles;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public
+  class CircleDemo {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// The static method getNumberOfCircles
+  can be called before creating any circle object<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The number of
+  circles is &quot; + Circle.getNumberOfCircles());<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>Circle circle1 = new Circle(8.5);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The number of
+  circles is &quot; + Circle.getNumberOfCircles());<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>Circle circle2 = new Circle(5.0);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The number of
+  circles is &quot; + Circle.getNumberOfCircles());<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The area of the
+  first circle is \t&quot; + circle1.area() + &quot; square cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The
+  circumference of the first circle is\t&quot; + circle1.circumference() +
+  &quot; cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The area of the
+  second circle is\t&quot; + circle2.area() + &quot; square cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The
+  circumference of the second circle is\t&quot; + circle2.circumference() +
+  &quot; cm\n\n&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<h1><span style='font-size:12.0pt;color:blue'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></h1>
+
+<h1><span style='font-size:12.0pt;color:blue'>3.<span style="mso-spacerun:
+yes">  </span>Accessor and Mutator methods<o:p></o:p></span></h1>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>It
+is a good programming principle to always declare instance variables as private.<span
+style="mso-spacerun: yes">  </span>However, it is O.K. to allow indirect access
+to these variables by providing public methods.<span style="mso-spacerun:
+yes">  </span>Some of these method only access but do not change the variables,
+hence they are called <b><font color="#0000FF"> accesor</font></b> methods.<span style="mso-spacerun: yes">  </span>Those
+that do not only access, but also make changes to these variables are called <b><font color="#0000FF">mutator&nbsp;</font></b>
+methods.<o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'>Example
+3:<span style="mso-spacerun: yes">  </span>The follows shows example of accessor
+and mutator methods.<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:9.9pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=696 valign=top style='width:7.25in;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>//
+  Demonstrating using accessor and mutator methods.<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>class
+  Rectangle {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>private double length , width;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public Rectangle(double rectangleLength ,
+  double rectangleWidth) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>length = rectangleLength;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>width = rectangleWidth;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public double area() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return length * width;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;color:blue'>// <span style="mso-spacerun:
+  yes"> </span>Accessor methods</span></b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;font-family:"Courier New"'><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public double getLength() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return length;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public double getWidth() {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>return width;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span></span><b><span style='font-size:10.0pt;
+  mso-bidi-font-size:12.0pt;color:blue'>// Mutator methods</span></b><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>
+  <span style='mso-tab-count:1'> </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void setLength(double newLength)<span
+  style='mso-tab-count:1'>      </span>{<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>length = newLength;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public void setRectangleWidth(float
+  newWidth) {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>width = newWidth;<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>public
+  class RectangleDemo {<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>public static void main(String[] args) <span
+  style='mso-tab-count:1'>      </span>{<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Create one Rectangle object<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>Rectangle rectangle = new
+  Rectangle(20.0, 10.0);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Get and display the area of rectangle<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>double area = rectangle.area();<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The area of the
+  rectangle is\t&quot; + area + &quot; square cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Get and display the length of
+  rectangle<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>//Note: we cannot use rectangle.length<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The length of
+  the rectangle is\t&quot; + rectangle.getLength() + &quot; cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Modify the length of rectangle1 to
+  12.0<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>//We must use a mutator method to change
+  the value of a private instance variable<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>rectangle.setLength(12.0);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Get and display the new length of the
+  rectangle<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The new length
+  of the rectangle is &quot; + rectangle.getLength() + &quot; cm&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span><o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>// Get and display the new area of the
+  rectangle<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:2'>      </span>System.out.println(&quot;The new area of
+  the rectangle is<span style="mso-spacerun: yes">   </span>&quot; +
+  rectangle.area() + &quot; square cm\n\n&quot;);<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'><span
+  style='mso-tab-count:1'>   </span>}<o:p></o:p></span></p>
+  <p style='margin:0in;margin-bottom:.0001pt;tab-stops:.25in .5in .75in 1.0in 1.25in'><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:"Courier New"'>}<o:p></o:p></span></p>
+  </td>
+ </tr>
+</table>
+
+<p style='margin:0in;margin-bottom:.0001pt'><span style='font-size:10.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<h1><span style='font-size:12.0pt;color:blue'>4.<span style="mso-spacerun:
+yes">  </span>Assignment.<o:p></o:p></span></h1>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l13 level1 lfo18;
+tab-stops:list .5in'><![if !supportLists]>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Open the folder <b>lab04 </b>,
+<span style="mso-spacerun: yes"> </span>Study, compile, and then execute each
+of the three demo applications:</p>
+
+<p class=MsoBodyText style='margin-left:1.0in;text-indent:-.25in;mso-list:l13 level2 lfo18;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>BoxDemo</p>
+
+<p class=MsoBodyText style='margin-left:1.0in;text-indent:-.25in;mso-list:l13 level2 lfo18;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>CircleDemo</p>
+
+<p class=MsoBodyText style='margin-left:1.0in;text-indent:-.25in;mso-list:l13 level2 lfo18;
+tab-stops:list 1.0in'><![if !supportLists]><span style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]>RectangleDemo</p>
+
+<p class=MsoBodyText style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l13 level1 lfo18;
+tab-stops:list .5in'><![if !supportLists]>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]>Write a java program containing two classes:<span
+style="mso-spacerun: yes">  </span>BankAccount and<span style="mso-spacerun:
+yes">  </span>BankAccountDemo. The class BankAccount must contain the
+following:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>an
+instance variable <b>accountNumber</b> of type int.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>an
+instance variable <b>customerName</b> of type String<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>an
+instance variable <b>balance</b> of type double.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+<b>constructor</b> that initializes each of the instance variables.</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+method <b>deposit</b>.</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+method <b>withdraw</b></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+method <b>getBalance</b>.</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The class BankAccountDemo
+must:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:27.0pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=385 valign=top style='width:288.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Prompt for and read the account number for the customer.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Prompt for and read the name of <span style="mso-spacerun:
+  yes"> </span>the customer.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Prompt for and read the initial balance for the customer.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Create a bankAccount object for the customer.</span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Prompt for and read an amount to be deposited.</span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Display the current balance for the customer after the deposit.</span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Prompt for and read an amount to be withdrawn.</span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Display the current balance of the customer after the withdrawal.</span></p>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=291 valign=top style='width:218.35pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><img border="0" src="fig04_1.gif" width="244" height="146"></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:.75in;text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='margin-left:.5in;text-indent:-.25in;mso-list:l13 level1 lfo18;
+tab-stops:list .5in'><![if !supportLists]>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span><![endif]><span style="mso-spacerun: yes"> </span>Write two java classes,
+<b>Student</b> and <b>StudentDemo</b> in separate files.<span
+style="mso-spacerun: yes">  </span>The class <b>Student</b> should contain the
+following:</p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>an
+instance variable <b>name</b> of type String.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>an
+instance variable <b>iDNumber</b> of type int<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>three
+instance variables <b>quiz1</b>, <b>quiz2</b>, <b>quiz3</b> of type double.<o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+<b>constructor</b> that initializes each of the instance variables.</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+<b>get method</b> for each of the instance variables.</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>three
+<b>set method</b>, one for each of quiz1, quiz2 and quiz3</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+method <b>average</b> to return the average of the three quizzes.</span></p>
+
+<p class=MsoNormal style='margin-left:1.0in;text-align:justify;text-indent:
+-.25in;mso-list:l18 level2 lfo21;tab-stops:list 1.0in'><![if !supportLists]><span
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>a
+method <b>printDetails</b> to print the details of a student object in the
+following format:</span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Student Name:<span
+style="mso-spacerun: yes">  </span>??????????</span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Student ID:<span
+style="mso-spacerun: yes">  </span>???????????</span></p>
+
+<p class=MsoNormal style='margin-left:1.5in;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>Quiz Grades: ???????<span
+style="mso-spacerun: yes">     </span>?????????<span style="mso-spacerun:
+yes">       </span>????????</span></p>
+
+<p class=MsoNormal style='text-align:justify'><span style='font-size:10.0pt;
+mso-bidi-font-size:12.0pt'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></span></p>
+
+<p class=MsoNormal style='margin-left:27.0pt;text-align:justify'><span
+style='font-size:10.0pt;mso-bidi-font-size:12.0pt'>The class StudentDemo must:<o:p></o:p></span></p>
+
+<table border=1 cellspacing=0 cellpadding=0 style='margin-left:27.0pt;
+ border-collapse:collapse;border:none;mso-border-alt:solid windowtext .5pt;
+ mso-padding-alt:0in 5.4pt 0in 5.4pt'>
+ <tr>
+  <td width=385 valign=top style='width:288.9pt;border:solid windowtext .5pt;
+  padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+  -.25in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Create an object of type Student, supplying values for name, ID
+  number and three quizzes in the constructor call.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>calls the printDetails method to print the details of the student<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>calls the average<span style="mso-spacerun: yes">  </span>method to
+  get the average and print it.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>Prompts for and read the new grade for quiz3 <o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:.25in;text-align:justify;text-indent:
+  -.25in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>calls the setQuiz3() method to change the value of quiz3 to the value
+  entered by the user.<o:p></o:p></span></p>
+  <p class=MsoNormal style='margin-left:0in;text-align:justify;text-indent:
+  0in;mso-list:l3 level2 lfo24;tab-stops:.25in .5in .75in list 1.0in'><![if !supportLists]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt;font-family:Symbol'>·<span
+  style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span></span><![endif]><span style='font-size:10.0pt;mso-bidi-font-size:
+  12.0pt'>prints the details and the average again.<o:p></o:p></span></p>
+  <p class=MsoNormal style='text-align:justify;tab-stops:.25in .5in .75in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+  <p class=MsoNormal style='text-align:justify'><![if !supportEmptyParas]>&nbsp;<![endif]><span
+  style='font-size:10.0pt;mso-bidi-font-size:12.0pt'><o:p></o:p></span></p>
+  </td>
+  <td width=291 valign=top style='width:218.35pt;border:solid windowtext .5pt;
+  border-left:none;mso-border-left-alt:solid windowtext .5pt;padding:0in 5.4pt 0in 5.4pt'>
+  <p class=MsoNormal style='text-align:justify'><img border="0" src="fig04_2.gif" width="292" height="183"></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoBodyText style='margin-left:.25in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+<p class=MsoBodyText style='margin-left:1.0in'><![if !supportEmptyParas]>&nbsp;<![endif]><o:p></o:p></p>
+
+</div>
+
+</body>
+
+</html>
